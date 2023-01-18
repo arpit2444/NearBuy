@@ -1,0 +1,60 @@
+.promoCodes{
+    margin-top: 50px;
+}
+
+.promoCodes>div{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: space-between;
+  gap: 20px;
+
+}
+
+.promoCards{
+    display: grid;
+    justify-content: center;
+    border: 1px solid rgb(222, 213, 213);
+}
+
+.promoCards img{
+    width: 95%;
+    margin: auto;
+}
+
+.promoCards>div{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    height: 30px;
+    padding-bottom: 10px;
+    color: rgb(166, 158, 158);
+    align-items: center;
+    /* border: 1px solid grey; */
+}
+
+.promoCards>div>button{
+    border: transparent;
+    background-color: transparent;
+    color: red;
+    cursor: pointer;
+    padding: 0px 0px;
+}
+
+.promoCards>hr{
+    width: 100%;
+    /* color: rgb(250, 247, 247); */
+    /* margin-bottom: -10px; */
+}
+
+@media screen and (max-width: 1000px) {
+    .promoCodes>div{
+        grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .promoCodes>div{
+        grid-template-columns: repeat(1,1fr);
+    }
+  }
+

@@ -1,0 +1,36 @@
+.fiveStarContainer{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-content: space-between;
+    margin-top: -10px
+}
+
+.fiveStarContainer div{
+  background-color: black;
+  color: white;
+  display: grid;
+  width: 70%;
+  padding: 10px 20px;
+  border: 3px solid orange;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .fiveStarContainer{
+        grid-template-columns: repeat(3,1fr);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .fiveStarContainer{
+        grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  @media screen and (max-width: 340px) {
+    .fiveStarContainer{
+        grid-template-columns: repeat(1,1fr);
+    }
+  }

@@ -1,0 +1,24 @@
+
+
+.eatOut{
+    background-color: #fff8ec;
+    padding: 20px 10px;
+    color: grey;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.eatOut button{
+   border: transparent;
+   background-color: #fff8ec;
+   color: blue;
+   cursor: pointer;
+}
+
+.eatOut1 p{
+    font-size: 12px;
+}
+
+.eatOut2 p{
+margin-bottom: 20px;
+font-size: 12px;
+}

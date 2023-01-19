@@ -1,0 +1,85 @@
+/* Navbar search box */
+
+.searchBox{ 
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgb(239 104 100) 0px 0px 0px 1px;
+}
+
+.inputBox{
+    padding: 10px 0px 10px 16px;
+}
+
+.searchInput{
+    padding-left: 5px;
+    width: 500px;
+    min-width: 350px;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.searchInput::placeholder {
+    color: #ef6864;
+    font-weight: 500;
+  }
+
+.searchButton{
+    position: absolute;
+    right: 0px;
+    margin-left: 0px;
+    width: 100px;
+    padding: 12px 0px;
+    background-color: #ef6864;
+    color: white;
+}
+
+.searchButton:hover{
+    background-color: #ef534e;
+}
+
+
+/* Search panel */
+
+.searchPanel{ 
+    width: 1260px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgb(239 104 100) 0px 0px 0px 1px;
+    margin: auto;
+}
+
+.inputBoxPanel{
+    padding: 15px 0px 15px 16px;
+    width: 90%;
+}
+
+.searchInputPanel{
+    padding-left: 5px;
+    width: 100%;
+    min-width: 350px;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.searchInputPanel::placeholder {
+    color: #ef6864;
+    font-weight: 500;
+  }
+
+.searchButtonPanel{
+    position: absolute;
+    right: 0px;
+    margin-left: 0px;
+    width: 120px;
+    padding: 17px 0px;
+    background-color: #ef6864;
+    color: white;
+}
+
+.searchButtonPanel:hover{
+    background-color: #ef534e;
+}

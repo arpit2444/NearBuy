@@ -4,7 +4,7 @@ import { Ratings } from './Ratings'
 // import { useNavigate } from 'react-router-dom'
 
 export const Products = ({ props }) => {
-    const { title, location, type, mrp, price, rating, images } = props
+    const { title, location, type, mrp, price, rating, imageUrl } = props
 
     // const navigate = useNavigate()
 
@@ -24,7 +24,7 @@ export const Products = ({ props }) => {
 
             <Box w={"100%"} position={"relative"}>
                 <Ratings rating={rating}/>
-                <Image src={images[0]} width={"100%"} alt="demo" />
+                <Image src={imageUrl} width={"100%"} alt="demo" />
             </Box>
 
             <Stack h={"190px"} justify={"space-between"} w={"100%"} p={"10px 12px"}>

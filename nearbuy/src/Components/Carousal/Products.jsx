@@ -3,7 +3,7 @@ import React from 'react'
 import { Ratings } from './Ratings'
 // import { useNavigate } from 'react-router-dom'
 
-export const Products = ({ props }) => {
+export const Products = ({key, props }) => {
     const { title, location, type, mrp, price, rating, imageUrl } = props
 
     // const navigate = useNavigate()

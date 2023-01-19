@@ -1,0 +1,80 @@
+.buffet{
+    padding: 0px 10px;
+}
+
+.buffet1{
+    display: flex;
+    margin-top: 50px;
+    gap: 10px;
+    align-items: center;
+}
+
+.buffet1>h1{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.buffet1>img{
+    width: 30px;
+    height: 30px;
+}
+
+.buffet2{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 65%;
+    margin-top: 10px;
+}
+
+.buffet2 img{
+    width: 180px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+ @media screen and (max-width:1270px) {
+    .buffet2{
+        width: 75%;
+    }
+ }
+  @media screen and (max-width:1000px) {
+    .buffet2{
+        width: 85%;
+    }
+ }
+
+ @media screen and (max-width:900px) {
+    .buffet2{
+        width: 95%;
+    }
+ } 
+
+ @media screen and (max-width:800px) {
+    .buffet2{
+        width: 100%;
+    }
+ } 
+
+ @media screen and (max-width:770px) {
+    .buffet2{
+        width: 100%;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+    .buffet2 img{
+        width: 280px;
+    }
+ } 
+
+ @media screen and (max-width:590px) {
+    .buffet2{
+        width: 100%;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+        justify-content: center;
+    }
+    .buffet2 img{
+        width: 100%;
+    }
+ } 

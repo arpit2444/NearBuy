@@ -1,0 +1,200 @@
+{
+    "restaurants": [
+      {
+        "id": 1,
+        "title": "TEO - Lounge & Bar",
+        "location":"Club Road Market, Punjabi Bagh West",
+        "type":"Drinks with Starters",
+        "rating":4.2,
+        "price":700,
+        "mrp":999,
+        "imageUrl":"https://img4.nbstatic.in/tr:w-500/61c41a491e2731000ba4280d.jpg",
+         "longAddress":"No. 37, 2nd & 3rd Floor, North West Avenue, Club Road, Club Road Market, Punjabi Bagh West, New Delhi",
+         "phoneNO":"+91 9911010904"
+      },
+  
+      {
+          "id": 2,
+          "title": "Duty-Free | Vayu Bar",
+          "location":"Rajouri Garden Main Market, Rajouri Garden",
+          "type":"Drinks with Starters",
+          "rating":4.1,
+          "price":799,
+          "mrp":1199,
+           "imageUrl":"https://img4.nbstatic.in/tr:w-500/602102ec79600c000b33e564.jpg",
+           "longAddress":"Rajouri Garden Main Market, C-10, Upper Ground Floor, Vishal Enclave, Najafgarh Road, Rajouri Garden, New Delhi",
+           "phoneNO":"+91 9718278603, +91 8447965309, +91 9891898913"
+        },
+  
+        {
+            "id": 3,
+            "title": "Warehouse Cafe ",
+            "location":"Connaught Place ",
+            "type":"Drinks with Starters ",
+            "rating":4.3,
+            "price":1049,
+            "mrp":1499,
+             "imageUrl":"https://img4.nbstatic.in/tr:w-500/5f5782eab7b01c000b3d8fdf.jpg",
+             "longAddress":"Connaught Place, No. D 19-20, 1st Floor, Rajiv Chowk, New Delhi",
+             "phoneNO":"+91 9999537128, +91 9953033368"
+          },
+  
+          {
+              "id": 4,
+              "title": "Open House Cafe",
+              "location":"Connaught Place ",
+              "type":"Drinks with Starters",
+              "rating":4.3,
+              "price":999,
+              "mrp":1299,
+               "imageUrl":"https://img4.nbstatic.in/tr:w-500/6114a79a1e2731000b7036ee.jpg",
+               "longAddress":"Connaught Place, C-37, 1st Floor, C Block, Inner Circle, New Delhi",
+               "phoneNO":"+91 9999611332, +91 9999611334"
+            },
+  
+            {
+                "id": 5,
+                "title": "Josh -The High Energy Bar",
+                "location":"Road Number 44, Shakurbasti ",
+                "type":"Drinks with Staters",
+                "rating":4.1,
+                "price":799,
+                "mrp":1099,
+                 "imageUrl":"https://img4.nbstatic.in/tr:w-500/5f6c2efb3ea567000b62b584.jpg",
+                 "longAddress":"Road Number 44, UG-131, Garg Plaza, Road No. 44, Shakurbasti, New Delhi",
+                 "phoneNO":"+91 7428894164, +91 7428894165, +91 9555558686"
+              },
+  
+              {
+                  "id": 6,
+                  "title": "Jungle Jamboree",
+                  "location":"3C's Mall TDI Westside, Lajpat Nagar 2",
+                  "type":"Buffet Offers, Drinks with Starters Offers",
+                  "rating":4.2,
+                  "price":499,
+                  "mrp":799,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/5f9416d4c4d55d000b18b2fb.jpg",
+                   "longAddress":"3C's Mall TDI Westside, Level 2, PVR 3Cs Mall, Near Central Market , Lajpat Nagar 2, New Delhi",
+                   "phoneNO":"+91 011 71564178, +91 7301111400, +91 7301111300, +91 7301111200"
+                }
+              ],
+  
+  "Barbeque": [
+                  {
+                  "id": 7,
+                  "title": "Barbeque Nation",
+                  "location":"Kasturba Gandhi Marg, Connaught Place ",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"Kasturba Gandhi Marg, N-96, 2nd Floor, Munshi Lal Building, Outer Circle, Connaught Place, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 8,
+                  "title": "Barbeque Nation",
+                  "location":"Emaya, Paschim Vihar ",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"3rd Floor, Emaya Mall, Plot No.1 Block. No. BG-1 and BG-5, DDA Flats Pocket B1, Paschim Vihar, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 9,
+                  "title": "Barbeque Nation",
+                  "location":"Rajouri Garden  ",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"A2/41, 3rd Floor, Block A DDA Flats, Rajouri Garden, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 10,
+                  "title": "Barbeque Nation",
+                  "location":"New Friends Colony Market, Friends Colony East",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"New Friends Colony Market, Shop No. 57A, 1st Floor, Near Modi Enterprises, Commercial Complex, Friends Colony East, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id":11,
+                  "title": "Barbeque Nation",
+                  "location":"Saket ",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"MA-4, Ground Floor, Restaurant Block, DLF Avenue, Saket, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 12,
+                  "title": "Barbeque Nation",
+                  "location":"Netaji Subhash Place ",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"Shop No. 101, 1st Floor, Aggarwal Corporate Heights, Netaji Subhash Place, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 13,
+                  "title": "Barbeque Nation",
+                  "location":"Jangpura Extension",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"Ground Floor, Eros Cinema Building, Jangpura Extension, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 14,
+                  "title": "Barbeque Nation",
+                  "location":"Unity One Mall, Janakpuri",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"2nd Floor, Unity One Mall, Near Janakpuri West Metro Station, Chander Nagar, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 15,
+                  "title": "Barbeque Nation",
+                  "location":"Unity One, Rohini Sector 12",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"601, 6th Floor, Unity One, MLCP Plot, Near Rohini West Metro Station , Rohini Sector 12, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 16,
+                  "title": "Barbeque Nation",
+                  "location":"Vegas Mall, Sector 14 Dwarka ",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"Shop No. R 05, 5th Floor, Vegas Mall, Pocket 1, Sector 14 Dwarka, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                },
+                 {
+                  "id": 17,
+                  "title": "Barbeque Nation",
+                  "location":"Maharaja Surajmal Road, Vivek Vihar Phase 2 ",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"Maharaja Surajmal Road, G2 & G3, Ground Floor, DDA Community Centre, Opp. Eastern Club, Vivek Vihar Phase 2, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }, {
+                  "id": 18,
+                  "title": "Barbeque Nation",
+                  "location":"Vasant Kunj Sector C",
+                  "type":"Buffet Offers",
+                  "price":1800,
+                   "imageUrl":"https://img4.nbstatic.in/tr:w-500/60d989e340e9df000b9f2355.jpg",
+                   "longAddress":"Plot No. 11, Pyramid Building, Opp. Delhi Public School, Vasant Kunj Sector C, New Delhi",
+                   "phoneNO":"+91 8069028721"
+                }
+   
+  ]
+  ,
+       
+  
+  "Cart":[  ]
+      
+  }

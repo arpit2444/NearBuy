@@ -1,4 +1,5 @@
 import {
+  Box,
   Divider,
   Heading,
   HStack,
@@ -8,6 +9,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+
 import React from "react";
 
 const CheckoutSummary = () => {

@@ -1,0 +1,43 @@
+
+.mind{
+    margin-top: 50px;
+    padding: 0px 10px;
+}
+
+
+.mind>h1{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.mind2{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 10px;
+    margin-top: 10px;
+    /* padding: 0px 10px; */
+}
+
+.mind2>img{
+    border-radius: 20px;
+}
+
+
+@media screen and (max-width:1200px) {
+    .mind2{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (max-width:750px) {
+    .mind2{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:550px) {
+    .mind2{
+        grid-template-columns: repeat(1,1fr);
+        justify-content: center;
+    }
+}

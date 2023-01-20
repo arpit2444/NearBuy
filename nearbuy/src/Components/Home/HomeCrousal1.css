@@ -5,6 +5,7 @@
     height: 100%;
     /* position: relative; */
     z-index: 0;
+    
   }
   
   .raviSlider1 {
@@ -25,6 +26,7 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    /* border: 1px solid red; */
   }
   
   .raviSlider1 img {
@@ -33,6 +35,7 @@
     height: 100%;
     object-fit: cover;
   }
+
 
   @media screen and (max-width:1000px) {
     .raviSlider1 img{

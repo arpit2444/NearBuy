@@ -1,8 +1,24 @@
-import { Drawer, DrawerBody, DrawerOverlay, DrawerContent, HStack, useDisclosure, Box, VStack, Text, Stack } from '@chakra-ui/react'
+import { Drawer, DrawerBody, DrawerOverlay, DrawerContent, HStack, useDisclosure, Box, VStack, Text, Stack, Image } from '@chakra-ui/react'
 import { HiOutlineSearch } from 'react-icons/hi'
 import { RxCross1 } from 'react-icons/rx'
 import { IoLocationSharp } from 'react-icons/io5'
 import { IoMdThumbsUp } from 'react-icons/io'
+import { RecommendedSearch } from './RecommendedSearch'
+import { Link } from 'react-router-dom'
+import { LocationPanel } from './LocationPanel'
+
+const Recommended = [
+    { title: "Spa & Massage", path: "" },
+    { title: "Nail Extention in Nails", path: "" },
+    { title: "Barbeque Nation", path: "" },
+    { title: "Smaaash", path: "" },
+    { title: "TOS - Take Off Scarlet, Punjabi Bagh West", path: "" },
+    { title: "KFC", path: "" },
+    { title: "Lord of the Drinks, Connaught Place", path: "" },
+    { title: "Excuse Me Boss, CP", path: "" },
+    { title: "Yes Minister - Pub & Kitchen, Hauz Khas", path: "" },
+    { title: "Castle's Barbeque, Tilak Nagar", path: "" }
+]
 
 export const SearchPanel = () => {
 
@@ -24,16 +40,13 @@ export const SearchPanel = () => {
 
                     <DrawerBody>
 
-                        <Box w={"100%"} h={"97vh"}>
+                        <Box w={"100%"} h={"97vh"} position={"relative"}>
 
                             <Stack m={"auto"} maxW={"1272px"}>
 
                                 <HStack justify={"space-between"} align={"center"} color={"gray.500"} p={"5px"} position={"relative"} m={"15px 0px"}>
 
-                                    <HStack fontWeight={"500"}>
-                                        <IoLocationSharp />
-                                        <Text>Select Location</Text>
-                                    </HStack>
+                                    <LocationPanel boolean={false} />
 
                                     <VStack justify={"center"} align={"center"} cursor={"pointer"} onClick={onClose} position={"relative"} top={"5px"}>
                                         <RxCross1 />
@@ -58,7 +71,28 @@ export const SearchPanel = () => {
                                         <Text fontWeight={"500"}>Recommended Searches</Text>
                                     </HStack>
 
+                                    <Box display={"flex"} flexDir={"row"} flexWrap={"wrap"} justify={"flex-start"} align={"center"} mt={"10px"}>
+
+                                        {
+                                            Recommended?.map((el, i) => <Link key={i} to={el.path} >
+                                                <RecommendedSearch title={el.title} />
+                                            </Link>)
+                                        }
+
+                                    </Box>
+
                                 </Box>
+
+                            </Stack>
+
+                            <Stack justify={"center"} align={"center"} w={"100%"} position={"absolute"} bottom={"0px"}>
+
+                                <HStack  justify={"flex-start"} align={"center"} w={"100%"} mb={"20px"}  maxW={"1272px"}>
+                                    <Box maxW={"140px"} ml={"4px"} borderRight={"1px solid #d8dce2"} pr={"20px"} mr={"10px"}>
+                                        <Image src="/HomeImages/herebuy.png" alt="herebuy" />
+                                    </Box>
+                                    <Text fontSize={"13px"} color={"gray.500"}>Experience the world around you.</Text>
+                                </HStack>
 
                             </Stack>
 

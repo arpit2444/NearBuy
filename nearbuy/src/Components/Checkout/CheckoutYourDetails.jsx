@@ -33,6 +33,7 @@ import {
 
 const CheckoutYourDetails = () => {
   const toast = useToast();
+  const id_cashOnDelivery = "test-toast";
 
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -43,20 +44,25 @@ const CheckoutYourDetails = () => {
   const [expiry, setExpiry] = useState(0);
 
   function DetailsSubmitButton() {
+    const id = "test-toast";
     if (name && address && city) {
       return (
         <Button
           colorScheme="red"
-          onClick={() =>
-            toast({
-              title: "Shipping Details Saved",
-              description: "We've saved your shipping details",
-              status: "info",
-              duration: 3000,
-              isClosable: true,
-              position: "top",
-            })
-          }
+          mt={4}
+          onClick={() => {
+            if (!toast.isActive(id)) {
+              toast({
+                id,
+                title: "Shipping Details Saved",
+                description: "We've saved your shipping details",
+                status: "info",
+                duration: 3000,
+                isClosable: true,
+                position: "top",
+              });
+            }
+          }}
         >
           Save Details
         </Button>
@@ -65,16 +71,20 @@ const CheckoutYourDetails = () => {
       return (
         <Button
           colorScheme="red"
-          onClick={() =>
-            toast({
-              title: "Fill details",
-              description: "Fill above shipping details to proceed",
-              status: "error",
-              duration: 3000,
-              isClosable: true,
-              position: "top",
-            })
-          }
+          mt={4}
+          onClick={() => {
+            if (!toast.isActive(id)) {
+              toast({
+                id,
+                title: "Fill details",
+                description: "Fill above shipping details to proceed",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+                position: "top",
+              });
+            }
+          }}
         >
           Save Details
         </Button>
@@ -83,26 +93,25 @@ const CheckoutYourDetails = () => {
   }
 
   function PaymentSubmitButton() {
+    const id = "test-toast";
     if (cardNumber && cvv && expiry) {
       return (
         <Button
           colorScheme="red"
           mt={4}
           onClick={() => {
-            return toast({
-              title: "Congratulations 🎉 Your order is placed",
-              description:
-                "Your order will be delivered within 2-3 working days.",
-              status: "success",
-              duration: 5000,
-              isClosable: true,
-              position: "top",
-            });
-
-            // set input fields empty
-            setCardNumber("");
-            setCVV("");
-            setExpiry("");
+            if (!toast.isActive(id)) {
+              toast({
+                id,
+                title: "Congratulations 🎉 Your order is placed",
+                description:
+                  "Your order will be delivered within 2-3 working days.",
+                status: "success",
+                duration: 5000,
+                isClosable: true,
+                position: "top",
+              });
+            }
           }}
         >
           Place Order
@@ -112,27 +121,56 @@ const CheckoutYourDetails = () => {
       return (
         <Button
           colorScheme="red"
-          onClick={() =>
-            toast({
-              title: "Fill payment details",
-              description: "Fill above payment details to proceed",
-              status: "error",
-              duration: 3000,
-              isClosable: true,
-              position: "top",
-            })
-          }
+          onClick={() => {
+            if (!toast.isActive(id)) {
+              toast({
+                id,
+                description: "Fill above payment details to proceed",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+                position: "top",
+              });
+            }
+          }}
         >
-          Save Details
+          Place Order
         </Button>
       );
     }
   }
 
+  function CashOnDeliveryPaymentSubmitButton() {
+    const id = "test-toast";
+
+    return (
+      <Button
+        mt={3}
+        colorScheme="red"
+        onClick={() => {
+          if (!toast.isActive(id)) {
+            toast({
+              id,
+              title: "Congratulations 🎉 Your order is placed",
+              description:
+                "Your order will be delivered within 2-3 working days.",
+              status: "success",
+              duration: 5000,
+              isClosable: true,
+              position: "top",
+            });
+          }
+        }}
+      >
+        Place Order
+      </Button>
+    );
+  }
+
   return (
     <>
       <Stack w="full" h="full" p={5} spacing={3} align="flex-start">
-        <Accordion w={"full"} allowToggle>
+        <Accordion w={"full"} defaultIndex={[0]} allowToggle>
           <AccordionItem>
             <h2>
               <AccordionButton _expanded={{ bg: "green", color: "white" }}>
@@ -216,23 +254,7 @@ const CheckoutYourDetails = () => {
                   <TabPanels>
                     <TabPanel>
                       <Text>Deliver to above address !</Text>
-                      <Button
-                        colorScheme="red"
-                        onClick={() =>
-                          toast({
-                            title: "Congratulations 🎉 Your order is placed",
-                            description:
-                              "Your order will be delivered within 2-3 working days.",
-                            status: "success",
-                            duration: 5000,
-                            isClosable: true,
-                            position: "top",
-                          })
-                        }
-                        mt={3}
-                      >
-                        Place Order
-                      </Button>
+                      <CashOnDeliveryPaymentSubmitButton />
                     </TabPanel>
                     <TabPanel>
                       <Text m={1} p={2}>
@@ -240,19 +262,25 @@ const CheckoutYourDetails = () => {
                       </Text>
 
                       <Input
-                        placeholder="Card Number"
-                        m={1}
-                        p={2}
-                        type="number"
-                        required={true}
+                        id="ccn"
+                        type="password"
+                        inputmode="numeric"
+                        pattern="[0-9]{16}"
+                        autocomplete="cc-number"
+                        maxlength="16"
+                        placeholder="xxxx xxxx xxxx xxxx"
                         onChange={(e) => setCardNumber(e.target.value)}
                       />
+
                       <HStack>
                         <Box>
                           <Text m={1} p={2}>
                             CVV
                           </Text>
                           <Input
+                            type="password"
+                            inputmode="numeric"
+                            pattern="[0-9]{3}"
                             maxLength={3}
                             placeholder={"Enter 3 digits CVV"}
                             onChange={(e) => setCVV(e.target.value)}
@@ -265,6 +293,9 @@ const CheckoutYourDetails = () => {
                             Expiry (MMDD)
                           </Text>
                           <Input
+                            type="password"
+                            inputmode="numeric"
+                            pattern="[0-9]{3}"
                             maxLength={4}
                             placeholder={"Enter 4 digits expiry"}
                             onChange={(e) => setExpiry(e.target.value)}

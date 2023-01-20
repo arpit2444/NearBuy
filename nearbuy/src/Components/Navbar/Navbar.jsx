@@ -8,7 +8,7 @@ import { SearchPanel } from "./SearchPanel"
 export const Navbar = () => {
 
     return (
-        <Box w={"100%"} position={"sticky"} top={"0"} bg={"white"}>
+        <Box zIndex={1} w={"100%"} position={"sticky"} top={"0"} bg={"white"}>
 
             <Box w={"100%"} fontSize={"12px"} bg={"#f1f1f1"}>
 

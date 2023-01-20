@@ -1,0 +1,113 @@
+.SearchMainDiv{
+width: 90%;
+margin: auto;
+display: flex;
+justify-content: space-evenly;
+text-align: left;
+padding-top: 50px;
+}
+
+
+.bcdSearch{
+ 
+    display: flex;
+    justify-content: space-between;
+}
+.bcdSearch h2{
+    font-size: 14px;
+    font-weight: 600;
+}
+/* .searchBtn {
+display: flex
+} */
+.searchBtnButton{
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+    border-radius: 2px;
+    border: 0.1px solid #EF534E;
+    background-color:#EF534E;
+    color: white;
+    font-size: 11px;
+    margin: 10px;
+}
+.searchButton{
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+      border-radius: 2px;
+  
+    border: 0.1px solid rgb(75, 75, 75);
+    background-color: white;
+    color: rgb(48, 48, 48);
+    font-size: 11px;
+}
+
+.SearchSidebar{
+width: 25%;
+}
+.SearchRight{
+    width: 70%;
+}
+.SearchProductBody{
+
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 25px;
+
+}
+
+.SearchProductBody div{
+padding: 20px;
+background-color: white;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+border-radius: 2px;
+margin: auto;
+height: 300px;
+}
+
+.SearchProductBody div img{
+    width: 260px;
+}
+.SearchProductBody div h3 span{
+    font-size: 12px;
+    font-weight: 200;
+}
+.SearchProductBody div h3{
+    font-size: 18px;
+    font-weight: 700;
+}
+.SearchProductBody div p span{
+    color: white;
+    background-color: #F47B58;
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+.SearchProductBody div p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media(max-width:950px) {
+    .SearchProductBody{
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 25px;
+        
+        }
+}
+
+@media(max-width:650px) {
+    .SearchProductBody{
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 25px;
+        
+        }
+}

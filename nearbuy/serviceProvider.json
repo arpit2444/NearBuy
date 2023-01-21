@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "TEO - Lounge & Bar",
+            "path": "teo_lounge_&_bar"
+        },
+        {
+            "id": 2,
+            "title": "Duty-Free | Vayu Bar",
+            "path": "duty_free_vayu_bar"
+        },
+        {
+            "id": 3,
+            "title": "Warehouse Cafe",
+            "path": "warehouse_cafe"
+        },
+        {
+            "id": 4,
+            "title": "Open House Cafe",
+            "path": "open_house_cafe"
+        },
+        {
+            "id": 5,
+            "title": "Josh -The High Energy Bar",
+            "path": "josh_the_high_energy_bar"
+        },
+        {
+            "id": 6,
+            "title": "Jungle Jamboree",
+            "path": "jungle_jamboree"
+        },
+        {
+            "id": 7,
+            "title": "Spa & Massage",
+            "path": "spa_&_massage"
+        },
+        {
+            "id": 8,
+            "title": "Nail Extention in Nails",
+            "path": "nail_extention_in_nails"
+        },
+        {
+            "id": 9,
+            "title": "Barbeque Nation",
+            "path": "barbeque_nation"
+        },
+        {
+            "id": 10,
+            "title": "Smaaash",
+            "path": "smaaash"
+        },
+        {
+            "id": 11,
+            "title": "TOS - Take Off Scarlet, Punjabi Bagh West",
+            "path": "tos_take_off_scarlet,_punjabi_bagh_west"
+        },
+        {
+            "id": 12,
+            "title": "KFC",
+            "path": "kfc"
+        },
+        {
+            "id": 13,
+            "title": "Lord of the Drinks, Connaught Place",
+            "path": "lord_of_the_drinks,_connaught_place"
+        },
+        {
+            "id": 14,
+            "title": "Excuse Me Boss, CP",
+            "path": "excuse_me_boss,_cp"
+        },
+        {
+            "id": 15,
+            "title": "Yes Minister - Pub & Kitchen, Hauz Khas",
+            "path": "yes_minister_pub_&_kitchen,_hauz_khas"
+        },
+        {
+            "id": 16,
+            "title": "Castle's Barbeque, Tilak Nagar",
+            "path": "castle's_barbeque,_tilak_nagar"
+        }
+    ]
+}

@@ -3,7 +3,7 @@ import "./FiveStar.css"
 
 export const FiveStar = () => {
   return (
-    <div>
+    <div className="FiveStar1">
         <h1>Dine At 5 Star Hotels</h1>
         <div className="fiveStarContainer">
            <div><h2>Novotel</h2></div>

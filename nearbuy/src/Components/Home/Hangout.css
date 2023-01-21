@@ -1,4 +1,6 @@
-
+/* .slideTopHangout{
+   height: 300px;
+} */
 .hangouts{
   padding: 0px 20px;
   /* border: 1px solid red; */
@@ -33,6 +35,7 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    margin-top: -35px;
   }
   
   .hangout-Slides>div{
@@ -40,7 +43,7 @@
     padding: 0px 0px;
     /* border: 1px solid red; */
     /* height: 400px; */
-    margin-top: -40px;
+    /* margin-top: -40px; */
     /* color: white; */
     /* position: absolute; */
     /* margin-top: -100px; */
@@ -65,11 +68,11 @@
 
   }
 
-  .hangout-Slides div img {
-    display: block;
-    width: 220px;
+  .hangout-Slides img {
+    /* display: block; */
+    width: 190px;
     height: 300px;
-    object-fit: cover;
+    /* object-fit: cover; */
     border-radius: 20px;
     box-shadow: inset 3px 4px 5px #000;
   }

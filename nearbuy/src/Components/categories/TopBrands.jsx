@@ -1,52 +1,119 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { GrNext, GrPrevious } from 'react-icons/gr';
+import { Box, Button } from '@chakra-ui/react';
+// import { Products } from './Products';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+const Prev = (props) => {
+    // console.log(props);
+    const { className, onClick } = props;
+    return (
+        <>
+            <Box borderRadius={"3px"} bg={"white"} p={"30px 8px"} zIndex={"10"} position={"absolute"} top={"20%"} left={"0px"} onClick={onClick} boxShadow={"rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"}>
+                <GrPrevious fontSize={"20px"} color={"#3f4246"} />
+            </Box>
+        </>
+    );
+};
 
-// import "./styles.css";
+const Next = (props) => {
+    // console.log(props);
+    const { className, onClick } = props;
+    return (
+        <>
+            <Box borderRadius={"3px"} bg={"white"} p={"30px 8px"} zIndex={"10"} position={"absolute"} top={"20%"} right={"0px"} onClick={onClick} boxShadow={"rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"}>
+                <GrNext fontSize={"20px"} color={"#3f4246"} />
+            </Box>
+        </>
+    );
+};
 
-// import required modules
-import { Pagination, Navigation } from "swiper";
+
+let arrOfCrousal3 = [
+  "./HomeImages/Homecrousal3/homeCrousal3img1.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img2.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img3.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img4.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img5.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img6.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img7.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img8.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img9.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img10.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img11.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img12.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img13.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img14.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img15.png",
+  "./HomeImages/Homecrousal3/homeCrousal3img16.png"
+]
+
 
 export const TopBrands = () => {
-  return (
-    <div>
-      <Swiper
-        slidesPerView={7}
-        spaceBetween={30}
-        slidesPerGroup={1}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
-        navigation={true}
-        modules={[ Navigation]}
-        // className="mySwiper"
-      >
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/60e40fd61e2731000b5adac7.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/60266a4279600c000b33f266.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/604a00f979600c000c8c1b1e.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/60374bd000106d000bde80e6.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/634d23c022b317000b5a2fcd.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/634d23c022b317000b5a2fcd.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/634d23c022b317000b5a2fcd.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/6026887f79600c000b33f357.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/60f930521e2731000b9bdf2d.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/60266a4279600c000b33f266.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/60e40fd61e2731000b5adac7.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/60e40fd61e2731000b5adac7.jpg" alt="Error"/></SwiperSlide>
-        <SwiperSlide><img width={"120px"} src="https://img4.nbstatic.in/tr:w-350/60e40fd61e2731000b5adac7.jpg" alt="Error"/></SwiperSlide>
-        
-      </Swiper>
-      {/* <img src="./categoryImages/topBrand/herebuy.png" alt="Error" /> */}
-      <img src="./categoryImages/topBrand/top-brand-img1.wepb" alt="" />
-      
 
-    </div>
-  );
-}
+    
+    // below is the amount of products want to show
+    // data = data?.filter((e, i) => i<10)
+
+    const settings = {
+        dots: false,
+        // below option is used for scroll inifite function set true to use.
+        infinite: true,
+        // space: 100,
+        speed: 500,
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        className:'sliderTop',
+        responsive: [
+          {
+            breakpoint: 1240,
+            settings: {
+                slidesToShow: 5,
+            }
+        },
+        {
+            breakpoint: 940,
+            settings: {
+                slidesToShow: 4,
+            }
+        },
+        {
+            breakpoint: 640,
+            settings: {
+                slidesToShow: 3,
+            }
+        }
+        ,
+        {
+            breakpoint: 440,
+            settings: {
+                slidesToShow: 2,
+            }
+        }
+        ]
+    };
+    
+
+    return (
+        <Box w={"99%"} m={"auto auto 50px auto"} marginTop='30px'>
+            <Box display={'flex'} gap="20px" alignItems={"center"} marginBottom='15px'>
+           <h1 style={{fontSize:'25px',fontWeight:'700'}}>Top Brands</h1>
+           </Box>
+            <Slider {...settings} prevArrow={<Prev />} nextArrow={<Next />} >
+              {
+                arrOfCrousal3.map((el)=>(
+                  <div>
+                     <img width={'150px'} src={el} alt="Error"/>
+                 </div>
+                ))
+              }
+            </Slider>
+        </Box>
+    );
+};
+
+

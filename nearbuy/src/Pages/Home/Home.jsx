@@ -10,7 +10,7 @@ import { Categories } from "../../Components/Home/Categories";
 import { Hangout } from "../../Components/Home/Hangouts";
 import {HomeCrousal1}  from "../../Components/Home/HomeCrousal1";
 import { HomeCrousal2 } from "../../Components/Home/HomeCrousal2";
-import { Homecrousal3 } from "../../Components/Home/HomeCrousal3";
+import { HomeCrousal3, Homecrousal3 } from "../../Components/Home/HomeCrousal3";
 import { HomeCrousal4 } from "../../Components/Home/HomeCrousal4";
 import axios from "axios"
 import { QuickBite } from "../../Components/Home/QuickBite";
@@ -19,7 +19,8 @@ import { HomeCrousal5 } from "../../Components/Home/HomeCrousal5";
 import { SalonServices } from "../../Components/Home/SalonServices";
 import { HomeCrousal6 } from "../../Components/Home/HomeCrousal6";
 import { Massages } from "../../Components/Home/Massage";
-import { HomePromoCodes } from "../../Components/Home/HomePromo";
+import { HomePromos } from "../../Components/Home/HomePromo";
+// import { HomePromoCodes } from "../../Components/Home/HomePromo";
 // import data from "../db.json"
 
 
@@ -33,7 +34,7 @@ export const Home = () => {
                 <Categories/>
                 <HomeCrousal1/>
                 <HomeCrousal2/>
-                <Homecrousal3/>
+                <HomeCrousal3/>
                 <Buffet/>
                 <HomeCrousal4/>
                 <Hangout/>
@@ -44,7 +45,10 @@ export const Home = () => {
                 <SalonServices/>
                 <HomeCrousal6/>
                 <Massages/>
-                <HomePromoCodes/>
+                <HomePromos/>
+                <div className="allOffers">
+                 <button>VIEW ALL OFFERS</button>
+                </div>
             </Box>
 
             {/* Below Box is for Footer*/}

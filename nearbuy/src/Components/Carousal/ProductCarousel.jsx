@@ -85,7 +85,11 @@ export const ProductCarousel = () => {
 
     return (
         <Box w={"99%"} m={"auto auto 50px auto"}>
-
+            <Box display={'flex'} gap="20px" alignItems={"center"}>
+           <h1 style={{fontSize:'25px',fontWeight:'700'}}>New On Nearbuy!</h1>
+           <img style={{width:'30px',height:'30px'}} src="./HomeImages/ProductCrousal/starEmoji.png" alt="Error" />
+           <img style={{width:'30px',height:'30px'}} src="./HomeImages/ProductCrousal/celebImage.png" alt="Error" />
+           </Box>
             <Slider {...settings} prevArrow={<Prev />} nextArrow={<Next />} >
 
                 {

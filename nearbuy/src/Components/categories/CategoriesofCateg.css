@@ -1,0 +1,45 @@
+
+
+.CategoriesofCateg{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    justify-content: center;
+    border: 1px solid grey;
+}
+
+.CategoriesOFcategCard{
+    /* border: 1px solid red; */
+    text-align: center;
+    padding: 30px 10px;
+    cursor: pointer;
+}
+
+.CategoriesOFcategCard:hover{
+    background-color: aliceblue;
+    color: red;
+    margin-top: -10px;
+
+}
+
+.CategoriesOFcategCard>img{
+    width: 35px;
+    margin: auto;
+}
+
+@media screen and (max-width: 1180px){
+    .CategoriesofCateg{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media screen and (max-width: 600px){
+    .CategoriesofCateg{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 600px){
+    .CategoriesofCateg{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

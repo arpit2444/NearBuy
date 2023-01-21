@@ -6,6 +6,9 @@
     z-index: 0;
     
   }
+  .sliderTop{
+    justify-content: center;
+  }
   
   /* .homeSlider3 {
     text-align: center;

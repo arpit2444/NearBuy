@@ -1,0 +1,49 @@
+.homePromo{
+    margin-top: 50px;
+}
+
+.homePromo>div{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: space-between;
+  gap: 20px;
+
+}
+
+.homePromoCards{
+    display: grid;
+    justify-content: center;
+    border: 1px solid rgb(222, 213, 213);
+}
+
+.homePromoCards img{
+    width: 95%;
+    margin: auto;
+}
+
+.homePromoCards>div{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    height: 30px;
+    padding-bottom: 10px;
+    color: rgb(166, 158, 158);
+    align-items: center;
+    /* border: 1px solid grey; */
+}
+
+.homePromoCards>div>button{
+    border: transparent;
+    background-color: transparent;
+    color: red;
+    cursor: pointer;
+    padding: 0px 0px;
+}
+
+.homePromoCards>hr{
+    width: 100%;
+    /* color: rgb(250, 247, 247); */
+    /* margin-bottom: -10px; */
+}
+
+

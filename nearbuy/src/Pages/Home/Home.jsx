@@ -13,23 +13,17 @@ import { HomeCrousal2 } from "../../Components/Home/HomeCrousal2";
 import { Homecrousal3 } from "../../Components/Home/HomeCrousal3";
 import { HomeCrousal4 } from "../../Components/Home/HomeCrousal4";
 import axios from "axios"
+import { QuickBite } from "../../Components/Home/QuickBite";
+import { Mind } from "../../Components/Home/Mind";
+import { HomeCrousal5 } from "../../Components/Home/HomeCrousal5";
+import { SalonServices } from "../../Components/Home/SalonServices";
+import { HomeCrousal6 } from "../../Components/Home/HomeCrousal6";
+import { Massages } from "../../Components/Home/Massage";
+import { HomePromoCodes } from "../../Components/Home/HomePromo";
+// import data from "../db.json"
 
 
 export const Home = () => {
-
- const [data,setData] = useState([]);
-
- const getData = () => {
-     axios.get("http://localhost:8080/restaurants").then((res)=>{
-        //  console.log(res.data);
-       setData(res.data)
-
-     })
- }
-
- useEffect(()=>{
-    getData();
- },[])
 
     return (
         <>
@@ -43,7 +37,14 @@ export const Home = () => {
                 <Buffet/>
                 <HomeCrousal4/>
                 <Hangout/>
-                <ProductCarousel data={data}/>
+                <ProductCarousel/>
+                <QuickBite/>
+                <Mind/>
+                <HomeCrousal5/>
+                <SalonServices/>
+                <HomeCrousal6/>
+                <Massages/>
+                <HomePromoCodes/>
             </Box>
 
             {/* Below Box is for Footer*/}

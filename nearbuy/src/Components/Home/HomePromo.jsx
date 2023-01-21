@@ -3,9 +3,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { Box, Button } from '@chakra-ui/react';
-import { Products } from './Products';
+// import { Products } from './Products';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+// import "./HomePromo.css"
 
 const Prev = (props) => {
     // console.log(props);
@@ -32,21 +33,8 @@ const Next = (props) => {
 };
 
 
-export const ProductCarousel = () => {
+export const HomePromoCodes = () => {
 
-    const [data,setData] = useState([]);
-
-    const getData = () => {
-        axios.get("http://localhost:8080/restaurants").then((res)=>{
-           //  console.log(res.data);
-          setData(res.data)
-   
-        })
-    }
-   
-    useEffect(()=>{
-       getData();
-    },[])
     
     // below is the amount of products want to show
     // data = data?.filter((e, i) => i<10)
@@ -87,12 +75,35 @@ export const ProductCarousel = () => {
         <Box w={"99%"} m={"auto auto 50px auto"}>
 
             <Slider {...settings} prevArrow={<Prev />} nextArrow={<Next />} >
-
-                {
-                    data?.map((item) => (
-                        <Products key={item.id} props={item} />
-                    ))
-                }
+            <div className="homePromo">
+            <h1>Promo Codes For More Savings</h1>
+            <div>
+               <div className="homePromoCards">
+                <img src="https://img4.nbstatic.in/tr:w-700/6299bae13b031b000ba75db4.jpeg" alt="Error" />
+                <hr />
+                <div>
+                    <p>Valid till 31 Dec 2023</p>
+                    <button>Know more</button>
+                </div>
+               </div>
+               <div className="homePromoCards">
+               <img src="https://img4.nbstatic.in/tr:w-700/6294bbe1b3c621000b366b85.jpeg" alt="Error" />
+               <hr />
+                <div>
+                    <p>Valid till 02 Feb 2023</p>
+                    <button>Know more</button>
+                </div>
+               </div>
+               <div className="homePromoCards">
+               <img src="https://img4.nbstatic.in/tr:w-700/636039fc22156b000cb5df05.jpeg" alt="Error" />
+               <hr />
+                <div>
+                    <p>Valid till 31 Dec 2023</p>
+                    <button>Know more</button>
+                </div>
+               </div>
+            </div>
+        </div>
 
             </Slider>
         </Box>

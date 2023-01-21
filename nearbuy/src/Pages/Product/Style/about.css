@@ -1,0 +1,104 @@
+.BookCard{
+    display: flex;
+
+   width: 100%;
+  
+border: 1px solid red;
+
+}
+
+
+.Book_Card1{
+    width: 744px;
+    height: 300px;
+    border: 1px solid blueviolet;
+    display: flex;
+    margin-bottom: 10px;
+
+}
+
+
+.Book_Card2{
+    width: 344px;
+    height: 250px;
+    border: 2px solid blue;
+    gap: 20px;
+}
+
+
+.Book_Card_Right_Side{
+    width: 500px;
+    height: 250px;
+    border: 2px solid blue;
+    
+}
+
+
+.cancel{
+color: #34a853;;
+}
+
+.valid{
+    display: flex;
+    font-size: 12px;
+}
+
+
+.validText{
+    font-size: 12px;
+}
+
+.validValue{
+    margin-left: 5px;
+}
+
+#marginAdd{
+    margin-left: 20px;
+}
+
+.RedBox{
+    width: auto;
+    background-color: red;
+    color: azure;
+    padding: 0 5px 0 5px;
+    font-weight: 600;
+    border-radius: 8%;
+}
+
+.buttonBox {
+    display: flex;
+    width: 46px;
+    height: 31px;
+  
+    
+}
+
+.buttonBox  button{
+    border: 1px solid  #35a7ff;
+    color: #35a7ff;
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+
+.OfferBox {
+    border: 1px solid #34a853;
+    color: #34a853;
+}
+
+.Cardprice{
+    display: flex;
+}
+.croosPrice{
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+
+.bigRupee{
+    margin-left: 5px;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 700;
+}

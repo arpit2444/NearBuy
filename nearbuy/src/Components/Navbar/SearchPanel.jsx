@@ -6,23 +6,64 @@ import { IoMdThumbsUp } from 'react-icons/io'
 import { RecommendedSearch } from './RecommendedSearch'
 import { Link } from 'react-router-dom'
 import { LocationPanel } from './LocationPanel'
-
-const Recommended = [
-    { title: "Spa & Massage", path: "" },
-    { title: "Nail Extention in Nails", path: "" },
-    { title: "Barbeque Nation", path: "" },
-    { title: "Smaaash", path: "" },
-    { title: "TOS - Take Off Scarlet, Punjabi Bagh West", path: "" },
-    { title: "KFC", path: "" },
-    { title: "Lord of the Drinks, Connaught Place", path: "" },
-    { title: "Excuse Me Boss, CP", path: "" },
-    { title: "Yes Minister - Pub & Kitchen, Hauz Khas", path: "" },
-    { title: "Castle's Barbeque, Tilak Nagar", path: "" }
-]
+import axios from 'axios'
+import { useCallback, useEffect, useState } from 'react'
+import { useThrottle } from './Hooks/useThrottle'
+import { getData } from './utils/accessLacalStorage'
 
 export const SearchPanel = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const [search, setSearch] = useState("")
+    const [suggestions, setSuggestions] = useState([])
+    const [recommended, setRecommended] = useState([])
+    const city = getData("city")
+
+
+    const getRecommended = useCallback((query) => {
+        const url = `http://localhost:8080/data`
+        axios.get(url)
+            .then((res) => {
+                setRecommended(res.data)
+            })
+            .catch((err) => {
+                console.log(err.message)
+            })
+    }, [])
+
+    // Search functionalities
+
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+    }
+
+    const handleQuery = useCallback((query) => {
+        if (query) {
+            const url = `http://localhost:8080/data?q=${query}`
+            axios.get(url)
+                .then((res) => {
+                    setSuggestions(res.data)
+                })
+                .catch((err) => {
+                    console.log(err.message)
+                })
+        } else {
+            setSuggestions([])
+        }
+    }, [])
+
+    let throttleValue = useThrottle(search, 2000)
+
+    useEffect(() => {
+        getRecommended()
+        handleQuery(throttleValue)
+    }, [throttleValue])
+
+
+    const handleService = () => {
+        setSearch("");
+    }
 
     return (
         <>
@@ -59,7 +100,7 @@ export const SearchPanel = () => {
                                     <HStack onClick={onOpen} color={"#ef6864"} justify={"flex-start"} align={"center"} className={"searchPanel"}>
                                         <HStack justify={"space-between"} align={"center"} className="inputBoxPanel">
                                             <HiOutlineSearch />
-                                            <input className="searchInputPanel " type={"text"} placeholder={"Search restaurants, spa, events, things to do..."} />
+                                            <input value={search} onChange={handleChange} className="searchInputPanel " type={"text"} placeholder={"Search restaurants, spa, events, things to do..."} />
                                         </HStack>
                                         <button className="searchButtonPanel">SEARCH</button>
                                     </HStack>
@@ -73,9 +114,20 @@ export const SearchPanel = () => {
 
                                     <Box display={"flex"} flexDir={"row"} flexWrap={"wrap"} justify={"flex-start"} align={"center"} mt={"10px"}>
 
+
                                         {
-                                            Recommended?.map((el, i) => <Link key={i} to={el.path} >
-                                                <RecommendedSearch title={el.title} />
+                                            suggestions && (
+                                                suggestions?.filter((e, i) => i <= 20).map((el) => <Link onClick={onClose} key={el.id} to={`${city}/${el.path}`} >
+                                                    <RecommendedSearch handleOnClick={handleService} title={el.title} />
+                                                </Link>)
+                                            )
+
+                                        }
+
+
+                                        {
+                                            suggestions.length === 0 && recommended?.filter((e, i) => i <= 10).map((el) => <Link onClick={onClose} key={el.id} to={`${city}/${el.path}`} >
+                                                <RecommendedSearch handleOnClick={handleService} title={el.title} />
                                             </Link>)
                                         }
 
@@ -87,7 +139,7 @@ export const SearchPanel = () => {
 
                             <Stack justify={"center"} align={"center"} w={"100%"} position={"absolute"} bottom={"0px"}>
 
-                                <HStack  justify={"flex-start"} align={"center"} w={"100%"} mb={"20px"}  maxW={"1272px"}>
+                                <HStack justify={"flex-start"} align={"center"} w={"100%"} mb={"20px"} maxW={"1272px"}>
                                     <Box maxW={"140px"} ml={"4px"} borderRight={"1px solid #d8dce2"} pr={"20px"} mr={"10px"}>
                                         <Image src="/HomeImages/herebuy.png" alt="herebuy" />
                                     </Box>

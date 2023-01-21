@@ -4,6 +4,7 @@ import './Navbar.css'
 import { SearchPanel } from "./SearchPanel"
 import { LocationPanel } from "./LocationPanel"
 import { Authentication } from "../Authentication/Authentication"
+import { Link } from "react-router-dom"
 
 export const Navbar = () => {
 
@@ -14,7 +15,7 @@ export const Navbar = () => {
 
                 <HStack m={"auto"} maxW={"1272px"} justify={"space-between"} align={"center"} color={"gray.500"} p={"5px"}>
 
-                    <LocationPanel/>
+                    <LocationPanel />
 
                     <UnorderedList m={"0px"} p={"0px"} display={{ base: "none", sm: "none", md: "block", lg: "block" }}>
                         <HStack fontWeight={"500"} position={"relative"}>
@@ -24,7 +25,7 @@ export const Navbar = () => {
                             <Text position={"relative"} top={"-1px"}>|</Text>
                             <Text cursor={"pointer"}>List your Business</Text>
                             <Text position={"relative"} top={"-1px"}>|</Text>
-                            <Authentication/>
+                            <Authentication />
                         </HStack>
                     </UnorderedList>
 
@@ -35,10 +36,11 @@ export const Navbar = () => {
             <Box w={"100%"} bg={"white"}>
 
                 <HStack m={"auto"} maxW={"1272px"} justify={"space-between"} align={"center"} p={"5px"}>
-
-                    <Box maxW={"140px"} ml={"4px"}>
-                        <Image src="/HomeImages/herebuy.png" alt="herebuy" />
-                    </Box>
+                    <Link to={'/'}>
+                        <Box maxW={"140px"} ml={"4px"}>
+                            <Image src="/HomeImages/herebuy.png" alt="herebuy" />
+                        </Box>
+                    </Link>
 
                     <UnorderedList m={"0px"} p={"0px"} display={{ base: "none", sm: "none", md: "block", lg: "block" }}>
                         <SearchPanel />

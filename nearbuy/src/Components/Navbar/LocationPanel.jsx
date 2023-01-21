@@ -1,14 +1,14 @@
-import { Drawer, DrawerBody, DrawerOverlay, DrawerContent, HStack, useDisclosure, Box, VStack, Text, Stack, Image, UnorderedList } from '@chakra-ui/react'
+import { Drawer, DrawerBody, DrawerOverlay, DrawerContent, HStack, useDisclosure, Box, VStack, Text, Stack, Image, UnorderedList, AlertTitle } from '@chakra-ui/react'
 import { IoLocationSharp } from 'react-icons/io5'
 import { BsBuilding } from 'react-icons/bs'
 import { RecommendedSearch } from './RecommendedSearch'
-import { Link } from 'react-router-dom'
 import { RxCross1 } from 'react-icons/rx'
 import { FaLocationArrow } from 'react-icons/fa'
 import { TfiArrowCircleDown } from 'react-icons/tfi'
 import { useCallback, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useThrottle } from './Hooks/useThrottle'
+import { getData, saveData } from './utils/accessLacalStorage'
 
 const Recommended = [
     { name: "New Delhi", path: "" },
@@ -28,9 +28,40 @@ const Recommended = [
 export const LocationPanel = ({ boolean = true }) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+
     const [search, setSearch] = useState("")
     const [suggestions, setSuggestions] = useState([])
-    const [city, setCity] = useState("Use My Current Location")
+    const savedCity = getData("city") 
+    const [city, setCity] = useState(savedCity || "Use My Current Location")
+
+    // Geo location
+    const [latitude, setLatitude] = useState("");
+    const [longitude, setLongitude] = useState("");
+
+    const getCoordinates = async () => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            setLatitude(position.coords.latitude);
+            setLongitude(position.coords.longitude);
+        })
+    }
+
+    const getLocation = () => {
+        const api_endpoint = `https://api.openweathermap.org/data/2.5/weather?`
+        const api_key = `ffd59a0590e28f3ddb262bfa988d132e`
+
+        axios.get(`${api_endpoint}lat=${latitude}&lon=${longitude}&appid=${api_key}`)
+            .then((res) => {
+                if(savedCity){
+                    setCity(savedCity)
+                }else{
+                    setCity(res.data.name)
+                }
+            })
+            .catch((err) => console.log(err.message))
+    }
+
+
+    // Search functionalities
 
     const handleChange = (e) => {
         setSearch(e.target.value)
@@ -42,7 +73,6 @@ export const LocationPanel = ({ boolean = true }) => {
             axios.get(url)
                 .then((res) => {
                     setSuggestions(res.data)
-                    // console.log(res)
                 })
                 .catch((err) => {
                     console.log(err.message)
@@ -56,8 +86,15 @@ export const LocationPanel = ({ boolean = true }) => {
 
     useEffect(() => {
         handleQuery(throttleValue)
-    }, [throttleValue])
+        getCoordinates()
+        getLocation()
+    }, [throttleValue, latitude, longitude])
 
+    const handleCity = (value) => {
+        setCity(value);
+        setSearch("")
+        saveData("city", value)
+    }
 
     return (
         <>
@@ -125,14 +162,14 @@ export const LocationPanel = ({ boolean = true }) => {
 
                                         {
                                             suggestions && (
-                                                suggestions?.filter((e, i) => i <= 20).map((el) => <Box key={el.id}><RecommendedSearch title={el.name} handleCity={() => setCity(el.name)} /> </Box>)
+                                                suggestions?.filter((e, i) => i <= 20).map((el) => <Box onClick={onClose} key={el.id}><RecommendedSearch title={el.name} handleOnClick={() => handleCity(el.name)} /> </Box>)
                                             )
 
                                         }
 
                                         {
 
-                                            suggestions.length === 0 && Recommended?.map((el, i) => <Box key={i + el.path}><RecommendedSearch title={el.name} handleCity={() => setCity(el.name)} /> </Box>)
+                                            suggestions.length === 0 && Recommended?.map((el, i) => <Box onClick={onClose} key={i + el.path}><RecommendedSearch title={el.name} handleOnClick={() => handleCity(el.name)} /> </Box>)
 
                                         }
 

@@ -3,17 +3,23 @@ import { useEffect } from 'react'
 import axios from "axios"
 import { useState } from 'react';
 import './Search.css';
+import Sidebar from './Sidebar/Sidebar';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Search() {
 const [data,setData] = useState([]);
 const [orders,setOrders] = useState('');
-
+const [searchParams] = useSearchParams();
 const [btnClass,setBtnClass] = useState("searchButton")
 const [btnClass2,setBtnClass2] = useState("searchBtnButton")
 
 
   const getBarbe=()=>{
-    axios.get(`http://localhost:8080/Barbeque?_sort=price&_order=${orders}`).then((res)=>setData(res.data))
+    axios.get(`http://localhost:8080/Barbeque?_sort=price&_order=${orders}`, {
+      params: {
+        address: searchParams.getAll('address')
+      }
+    }).then((res)=>setData(res.data))
   };
 
   const highToLow=()=>{
@@ -29,9 +35,10 @@ setBtnClass2("searchButton")
 
 
   useEffect(()=>{
+    
     getBarbe();
   
-  },[orders])
+  },[orders,searchParams])
   return (
     <div style={{backgroundColor:"#E1E9EC"}}>
     {/* <div className='SearchMainDiv'>
@@ -39,7 +46,9 @@ setBtnClass2("searchButton")
 
     <div className='SearchMainDiv'>
 
-        <div className='SearchSidebar'></div>
+        <div className='SearchSidebar'>
+<Sidebar/>
+        </div>
 
         <div className='SearchRight'>
 

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const CategoriesOfCateg = () => {
     return (
         <>
-        <Box className="CategoriesofCateg">
+        <Box className="categoriesofCateg">
                    <Box className="CategoriesOFcategCard">
                     <img src="./category/categofCateg/categofCateg.png" alt="Error" />
                     <p>Buffet Deals</p>

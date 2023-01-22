@@ -9,7 +9,7 @@ export const AllRoutes = () => {
         <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/category" element={<Category/>}></Route>
-      <Route path="/checkout" element={<Checkout />} />
+            <Route path="/checkout" element={<Checkout />} />
             
             <Route path="/search" element={<Search/>}></Route>
             {/* <Route path="" element={}></Route> */}

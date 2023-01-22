@@ -25,14 +25,17 @@
     font-weight: 500;
   }
 
-.searchButton{
+  .searchButton{
     position: absolute;
     right: 0px;
-    margin-left: 0px;
-    width: 100px;
-    padding: 12px 0px;
+    margin-left: 5px;
+    width: 20%;
+    height: 100%;
     background-color: #ef6864;
     color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .searchButton:hover{

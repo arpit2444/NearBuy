@@ -1,0 +1,82 @@
+.form__div {
+    position: relative;
+    top: 30px;
+    height: 48px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    margin: auto;
+}
+
+.form__input {
+    width: 93%;
+    height: 90%;
+    font-size: 13px;
+    outline: none;
+    background: none;
+    z-index: 1;
+    margin-left: 10px;
+    font-weight: 500;
+    border-bottom: 1px solid gray;
+}
+
+.form__label {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    background-color: #fff;
+    color: gray;
+    font-size: 13px;
+    transition: .3s;
+}
+
+/*Input focus move up label*/
+.form__input:focus+.form__label {
+    top: -.5rem;
+    color: gray;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label {
+    top: -.5rem;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 10;
+}
+
+
+/* signin */
+
+.signin {
+    position: relative;
+    top: 80px;
+    padding: 5px 20px;
+    margin-left: 10px;
+    background-color: #ef6864;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.backBtn{
+    position: relative;
+    top: 80px;
+    padding: 5px 20px;
+    margin-left: 10px;
+    background-color: #ef6864;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.backBtn:hover {
+    background-color: #ef534e;
+}
+
+.signin:hover {
+    background-color: #ef534e;
+}

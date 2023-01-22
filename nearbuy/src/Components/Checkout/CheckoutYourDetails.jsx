@@ -31,9 +31,11 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 
+import Confetti from "./OrderSuccessCelebration";
+
 const CheckoutYourDetails = () => {
   const toast = useToast();
-  const id_cashOnDelivery = "test-toast";
+  // const id_cashOnDelivery = "test-toast";
 
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -111,6 +113,7 @@ const CheckoutYourDetails = () => {
                 isClosable: true,
                 position: "top",
               });
+              <Confetti />;
             }
           }}
         >

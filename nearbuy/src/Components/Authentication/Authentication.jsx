@@ -1,54 +1,90 @@
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure, Button, FormControl, FormLabel, Input, HStack, Text, VStack, Stack, Box, Grid, Image, UnorderedList, PinInput, PinInputField, } from '@chakra-ui/react'
+import { Modal, ModalOverlay, ModalContent, useDisclosure,  HStack, Text, VStack, Stack, Box, Grid, Image, UnorderedList, useToast} from '@chakra-ui/react'
 import { useContext, useRef, useState } from 'react'
 import { IoMdLock } from 'react-icons/io'
 import { RxCross1 } from 'react-icons/rx'
-import { useNavigate } from 'react-router-dom'
-// import { userAuthContext } from '../Context/UserAuthContext'
+import { userAuthContext } from '../Context/UserAuthContext'
 import './Authentication.css'
 
 export const Authentication = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [showOTP, setShowOTP] = useState(false)
-    const [otp, setOtp] = useState("")
+
     const initialRef = useRef(null)
     const finalRef = useRef(null)
-
-
+    
+    const { setUpRecaptcha, user } = useContext(userAuthContext)
+    const [confirmObj, setConfirmObj] = useState("")
+    const [showOTP, setShowOTP] = useState(false)
     const [number, setNumber] = useState("")
-    const [error, setError] = useState("")
-    // const { setUpRecaptcha } = useContext(userAuthContext)
-    const [confirmObj, setConfirmObj] = useState("");
-    const navigate = useNavigate()
+    const [otp, setOtp] = useState("")
+
+    const toast = useToast()
+
+
 
     const handleSendOtp = async () => {
-        setError("")
-        // if (number === "" || number === undefined) {
-        //     return setError("Please enter a valid Phone Number");
-        // } else {
-        //     try {
-        //         const res = await setUpRecaptcha(number)
-        //         setConfirmObj(res)
-        //         setShowOTP(true)
-        //         console.log(res)
-        //     } catch (err) {
-        //         console.log(err.message)
-        //     }
-        // }
+        if (number === "" || number === undefined) {
+            toast({
+                position: "top",
+                title: 'Account created.',
+                description: "Please enter a valid Phone Number.",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+              })
+        } else {
+            try {
+                const res = await setUpRecaptcha(number)
+                setConfirmObj(res)
+                setShowOTP(!showOTP)
+                if(res.data){
+                    console.log(res)
+                    toast({
+                        position: "top",
+                        title: 'Account created.',
+                        description: "OTP send Successfully.",
+                        status: 'success',
+                        duration: 5000,
+                        isClosable: true,
+                      })
+                }
+            } catch (err) {
+                console.log(err.message)
+            }
+        }
     }
 
     const handleVerifyOtp = async () => {
-        setError("")
-        // if (otp === "" || otp === null) {
-        //     return;
-        // } else {
-        //     try {
-        //         const res = await confirmObj.confirm(otp)
-        //         navigate("/")
-        //     } catch (err) {
-        //         console.log(err.message)
-        //     }
-        // }
+        if (otp === "" || otp === null) {
+            toast({
+                position: "top",
+                title: 'Account created.',
+                description: "Invalid OTP!",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+              })
+            return;
+        } else {
+            try {
+                const res = await confirmObj.confirm(otp)
+                console.log(res)
+                if(res._tokenResponse){
+                    onClose()
+                    toast({
+                        position: "top",
+                        title: 'Account created.',
+                        description: "Sign In Successfully.",
+                        status: 'success',
+                        duration: 5000,
+                        isClosable: true,
+                      })
+                }
+            } catch (err) {
+                console.log(err.message)
+            }
+        }
     }
+
 
     return (
         <>
@@ -64,9 +100,9 @@ export const Authentication = () => {
                 onClose={onClose}
             >
                 <ModalOverlay />
-                <ModalContent borderRadius={"5px"} w={"500px"}>
+                <ModalContent borderRadius={"5px"}>
 
-                    <Grid p={"0px"} borderRadius={"5px"} overflow={"hidden"} minH={"450px"} templateColumns={{ base: "repeat(2, 10% 90%)", sm: "repeat(2, 10% 90%)", md: "repeat(2, 30% 70%)", lg: "repeat(2, 30% 70%)" }}>
+                    <Grid p={"0px"} borderRadius={"5px"} overflow={"hidden"} minH={"450px"} templateColumns={{ base: "repeat(2, 10% 90%)", sm: "repeat(2, 10% 90%)", md: "repeat(2, 28% 72%)", lg: "repeat(2, 28% 72%)" }}>
 
                         <Stack justify={"Center"} align={"center"} h={"100%"} bg={"#ef534e"}>
                             <UnorderedList m={"0px"} p={"0px"} display={{ base: "none", sm: "none", md: "block", lg: "block" }}>
@@ -84,15 +120,14 @@ export const Authentication = () => {
                                 <HStack justify={"flex-end"} align={"center"} w={"100%"} p={"15px 16px"}>
                                     <Text cursor={"pointer"} onClick={onClose}><RxCross1 /></Text>
                                 </HStack>
-                                <Text ml={"20px"} fontSize={"20px"} fontWeight={"500"}>Login / Sign up</Text>
+                                <Text ml={"10px"} fontSize={"20px"} fontWeight={"500"}>Login / Sign up</Text>
                                 <div className="form__div">
-                                    <input type="number" className="form__input" placeholder=" " />
+                                    <input value={number} onChange={(e) => setNumber(e.target.value)} type="number" className="form__input" placeholder=" " />
                                     <label for="" className="form__label">
                                         Mobile Number</label>
                                 </div>
 
-                                <Box id='recaptcha-container' cursor={"pointer"} m={"auto"} w={"90%"} position={"relative"} top={"60px"}>
-                                    {/* <Image src="/HomeImages/recaptcha.png" alt="recaptcha" /> */}
+                                <Box id='recaptcha-container' p={"10px"} cursor={"pointer"} m={"auto"} w={"100%"} position={"relative"} top={"60px"}>
                                 </Box>
 
                                 <button onClick={handleSendOtp} className="signin">NEXT</button>
@@ -102,9 +137,9 @@ export const Authentication = () => {
                             <HStack justify={"flex-end"} align={"center"} w={"100%"} p={"15px 16px"}>
                                 <Text cursor={"pointer"} onClick={onClose}><RxCross1 /></Text>
                             </HStack>
-                            <Text ml={"20px"} fontSize={"13px"} fontWeight={"500"}>OTP sent to you on your mobile phone</Text>
+                            <Text ml={"10px"} fontSize={"13px"} fontWeight={"500"}>OTP sent to you on your mobile phone</Text>
                             <div className="form__div">
-                                <input type="number" className="form__input" placeholder=" " />
+                                <input value={otp} onChange={(e) => setOtp(e.target.value)} type="number" className="form__input" placeholder=" " />
                                 <label for="" className="form__label">OTP</label>
                             </div>
 

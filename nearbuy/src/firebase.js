@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB8mpTQnEVYfWKyGpMGi8Ov3InpqrrredQ",
-  authDomain: "cw-project-level-5.firebaseapp.com",
-  projectId: "cw-project-level-5",
-  storageBucket: "cw-project-level-5.appspot.com",
-  messagingSenderId: "827828145649",
-  appId: "1:827828145649:web:13957e375f9d7534360850"
+  apiKey: "AIzaSyCWpGmdh6pw7CG40Y9qs6s14ZlNpGmyfXQ",
+  authDomain: "herebuy-phone-auth.firebaseapp.com",
+  projectId: "herebuy-phone-auth",
+  storageBucket: "herebuy-phone-auth.appspot.com",
+  messagingSenderId: "186736113943",
+  appId: "1:186736113943:web:42ccb0efb3c0eef5919f52"
 };
 
 // Initialize Firebase

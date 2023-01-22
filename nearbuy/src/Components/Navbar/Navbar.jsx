@@ -5,11 +5,17 @@ import { SearchPanel } from "./SearchPanel"
 import { LocationPanel } from "./LocationPanel"
 import { Authentication } from "../Authentication/Authentication"
 import { Link } from "react-router-dom"
+import { AuthDropDown } from "../Authentication/AuthDropDown"
+import { useContext } from "react"
+import { userAuthContext } from "../Context/UserAuthContext"
+import { Sidebar } from "./Sidebar"
 
 export const Navbar = () => {
 
+    const {user} = useContext(userAuthContext)
+
     return (
-        <Box zIndex={1} w={"100%"} position={"sticky"} top={"0"} bg={"white"}>
+        <Box zIndex={100} w={"100%"} position={"sticky"} top={"0"} bg={"white"}>
 
             <Box w={"100%"} fontSize={"12px"} bg={"#f1f1f1"}>
 
@@ -25,7 +31,7 @@ export const Navbar = () => {
                             <Text position={"relative"} top={"-1px"}>|</Text>
                             <Text cursor={"pointer"}>List your Business</Text>
                             <Text position={"relative"} top={"-1px"}>|</Text>
-                            <Authentication />
+                            {!user?.accessToken? <Authentication /> : <AuthDropDown/>}
                         </HStack>
                     </UnorderedList>
 
@@ -44,6 +50,12 @@ export const Navbar = () => {
 
                     <UnorderedList m={"0px"} p={"0px"} display={{ base: "none", sm: "none", md: "block", lg: "block" }}>
                         <SearchPanel />
+                    </UnorderedList>
+
+                    <UnorderedList m={"0px"} p={"0px"} display={{ base: "block", sm: "block", md: "none", lg: "none" }}>
+
+                        <Sidebar/>
+
                     </UnorderedList>
 
                 </HStack>

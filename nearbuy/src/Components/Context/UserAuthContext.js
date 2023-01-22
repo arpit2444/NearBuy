@@ -12,14 +12,15 @@ export const userAuthContext = createContext();
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
 
-  function logOut() {
+  function SignOut() {
+    setUser({});
     return signOut(auth);
   }
 
   const setUpRecaptcha = (number) => {
     const recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {}, auth);
     recaptchaVerifier.render();
-    const phFormat = "+" + number
+    const phFormat = "+91" + number
     return signInWithPhoneNumber(auth, phFormat, recaptchaVerifier)
   }
 
@@ -38,7 +39,7 @@ export function UserAuthContextProvider({ children }) {
 
   return (
     <userAuthContext.Provider
-      value={{ user, logOut, setUpRecaptcha }}
+      value={{ user, SignOut, setUpRecaptcha }}
     >
       {children}
     </userAuthContext.Provider>

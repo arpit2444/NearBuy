@@ -4,13 +4,13 @@ import axios from "axios"
 import { useState } from 'react';
 import './Search.css';
 import Sidebar from './Sidebar/Sidebar';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 export default function Search() {
 const [data,setData] = useState([]);
 const [orders,setOrders] = useState('');
 const [searchParams] = useSearchParams();
-const [btnClass,setBtnClass] = useState("searchButton")
+const [btnClass,setBtnClass] = useState("searchButtonA")
 const [btnClass2,setBtnClass2] = useState("searchBtnButton")
 
 
@@ -25,12 +25,12 @@ const [btnClass2,setBtnClass2] = useState("searchBtnButton")
   const highToLow=()=>{
  setOrders('desc');
 setBtnClass("searchBtnButton")
-setBtnClass2("searchButton")
+setBtnClass2("searchButtonA")
   };
   const LowTOHigh=()=>{
     setOrders('asc');
     setBtnClass2("searchBtnButton")
-    setBtnClass('searchButton')
+    setBtnClass('searchButtonA')
   };
 
 
@@ -66,11 +66,11 @@ setBtnClass2("searchButton")
         <div className='SearchProductBody'>
           
           {data.length>0 && data.map((el)=>{
-            return <div key={el.id}>
+            return <Link to={`/product/${el.id}`}> <div key={el.id}>
               <img src={el.imageUrl} alt="" />
               <h3>{el.title} <br/><span>{el.location}</span></h3>
               <p><span>DEALS</span>{el.type} from ₹ {el.price}</p>
-            </div>
+            </div></Link>
           })}
         </div></div>
     </div>

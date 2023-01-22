@@ -1,4 +1,4 @@
-/* Navbar search box */
+ Navbar search box
 
 .searchBox{ 
     position: relative;
@@ -29,13 +29,17 @@
     position: absolute;
     right: 0px;
     margin-left: 5px;
-    width: 20%;
-    height: 100%;
+    /* width: 20%; */
+    /* height: 100%; */
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    padding: 10px;
     background-color: #ef6864;
     color: white;
     border: none;
     font-size: 14px;
     font-weight: 500;
+ 
 }
 
 .searchButton:hover{
@@ -85,12 +89,12 @@
 
 .searchButtonPanel:hover{
     background-color: #ef534e;
-}
+} 
 
 
 /* Location panel */
 
-.LocationPanel{ 
+ .LocationPanel{ 
     max-width: 620px;
     position: relative;
     overflow: hidden;
@@ -130,4 +134,4 @@
 
 .LocationButtonPanel:hover{
     background-color: #ef534e;
-}
+} 

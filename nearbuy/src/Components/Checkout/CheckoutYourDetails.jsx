@@ -35,7 +35,6 @@ import Confetti from "./OrderSuccessCelebration";
 
 const CheckoutYourDetails = () => {
   const toast = useToast();
-  // const id_cashOnDelivery = "test-toast";
 
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -172,7 +171,7 @@ const CheckoutYourDetails = () => {
 
   return (
     <>
-      <Stack w="full" h="full" p={5} spacing={3} align="flex-start">
+      <Stack m={"auto"} w={"full"} p={5} spacing={3} align="flex-start">
         <Accordion w={"full"} defaultIndex={[0]} allowToggle>
           <AccordionItem>
             <h2>
@@ -231,7 +230,11 @@ const CheckoutYourDetails = () => {
               </VStack>
             </AccordionPanel>
           </AccordionItem>
+        </Accordion>
+      </Stack>
 
+      <Stack m={"auto"} w={"full"} p={5} spacing={3} align="flex-start">
+        <Accordion w={"full"} defaultIndex={[0]} allowToggle>
           <AccordionItem>
             <h2>
               <AccordionButton _expanded={{ bg: "green", color: "white" }}>

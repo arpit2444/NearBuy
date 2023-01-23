@@ -11,7 +11,6 @@ const Checkout = () => {
         {/* <CheckoutSummary /> */}
         <CheckoutYourDetails />
       </Stack>
-      <OrderSuccessCelebration />
     </>
   );
 };

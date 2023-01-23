@@ -37,7 +37,7 @@ export const ProductCarousel = () => {
     const [data,setData] = useState([]);
 
     const getData = () => {
-        axios.get("http://localhost:8080/restaurants").then((res)=>{
+        axios.get("https://herebuy-database.vercel.app/restaurants").then((res)=>{
            //  console.log(res.data);
           setData(res.data)
    

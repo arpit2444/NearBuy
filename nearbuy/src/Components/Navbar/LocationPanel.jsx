@@ -69,7 +69,7 @@ export const LocationPanel = ({ boolean = true }) => {
 
     const handleQuery = useCallback((query) => {
         if (query) {
-            const url = `http://localhost:8000/cities?q=${query}`
+            const url = `https://herebuy-database.vercel.app/cities?q=${query}`
             axios.get(url)
                 .then((res) => {
                     setSuggestions(res.data)

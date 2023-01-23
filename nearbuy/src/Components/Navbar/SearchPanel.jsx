@@ -22,7 +22,7 @@ export const SearchPanel = () => {
 
 
     const getRecommended = useCallback((query) => {
-        const url = `http://localhost:8080/data`
+        const url = `https://herebuy-database.vercel.app/data`
         axios.get(url)
             .then((res) => {
                 setRecommended(res.data)
@@ -40,7 +40,7 @@ export const SearchPanel = () => {
 
     const handleQuery = useCallback((query) => {
         if (query) {
-            const url = `http://localhost:8080/data?q=${query}`
+            const url = `https://herebuy-database.vercel.app/data?q=${query}`
             axios.get(url)
                 .then((res) => {
                     setSuggestions(res.data)

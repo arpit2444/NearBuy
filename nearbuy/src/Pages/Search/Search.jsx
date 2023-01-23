@@ -15,7 +15,7 @@ const [btnClass2,setBtnClass2] = useState("searchBtnButton")
 
 
   const getBarbe=()=>{
-    axios.get(`http://localhost:8080/Barbeque?_sort=price&_order=${orders}`, {
+    axios.get(`https://herebuy-database-jj32uwrxx-kashif-rezwi.vercel.app/Barbeque?_sort=price&_order=${orders}`, {
       params: {
         address: searchParams.getAll('address')
       }

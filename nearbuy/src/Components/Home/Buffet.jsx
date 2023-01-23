@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react"
 import "./Buffet.css"
-
+import {Link} from "react-router-dom"
 
 export const Buffet = () => {
     return (
@@ -20,9 +20,9 @@ export const Buffet = () => {
                 <Box>
                     <img src="./HomeImages/Buffet/buffet-img3.png" alt="Error" />
                 </Box>
-                <Box>
+            <Link to="/product">    <Box>
                     <img src="./HomeImages/Buffet/buffet-img4.png" alt="Error" />
-                </Box>
+                </Box></Link>
             </Box>
         </Box>
     )

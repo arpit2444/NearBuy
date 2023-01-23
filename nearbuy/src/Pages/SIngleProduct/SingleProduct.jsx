@@ -29,7 +29,7 @@ export default function SingleProduct() {
   const navigate = useNavigate();
 
   const getProduct = () => {
-    axios.get(`http://localhost:8080/Barbeque?id=${id}`).then((res) => {
+    axios.get(`https://herebuy-database-jj32uwrxx-kashif-rezwi.vercel.app/Barbeque?id=${id}`).then((res) => {
       setDdata(res.data[0]);
     });
   };

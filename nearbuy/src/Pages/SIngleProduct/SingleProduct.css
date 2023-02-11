@@ -1,0 +1,90 @@
+.singleProCOntain{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.singleProCOntain div{
+    width: 40%;
+}
+.singleProCOntain div img{
+    width: 550px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+.singTItle{
+  
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.singshortloc{
+    font-size: 22px;
+    font-weight: 700;
+}
+.singlongloc{
+    font-size: 15px;
+    font-weight: 600;
+}
+.singcont{
+    font-size: 15px;
+    font-weight: 600;
+}
+.singcont span{
+    font-weight: 800;
+}
+.singlongloc span{
+    font-weight: 800;
+}
+
+.singtwo{
+width: 40%;
+}
+
+.singbtn1{
+    font-size: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+   background-color: #EF534E;
+   color: white;
+   text-align: center;
+   border-radius: 8px;
+   font-weight: 800;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.singbtn1div{
+display: flex;
+gap: 20px;
+}
+
+.singtype{
+    font-size: 65px;
+    font-weight: 800;
+    color:#EF534E;
+}
+.singprice{
+    font-size: 25px;
+    font-weight: 800;
+}
+.singprice2{
+    font-size: 50px;
+    /* color:#EF534E; */
+    font-weight: 900;
+}
+
+.singfinalbtn{
+    font-size: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+   background-color: #EF534E;
+   color: white;
+   text-align: center;
+   border-radius: 8px;
+   font-weight: 800;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

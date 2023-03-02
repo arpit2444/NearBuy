@@ -32,63 +32,19 @@ const Next = (props) => {
     );
 };
 
-const arrOfHangouts = [
-    {
-     image: "./HomeImages/Hangout/hangout-img1.png",
-     name: "Cannaught Place",
-     offers: 25,
-     price: 99
-    },
-    {
-     image: "./HomeImages/Hangout/hangout-img2.png",
-     name: "Club Road",
-     offers: 10,
-     price: 59
-    },
-    {
-     image: "./HomeImages/Hangout/hangout-img3.png",
-     name: "Aerocity",
-     offers: 8,
-     price: 599
-    },{
-     image: "./HomeImages/Hangout/hangout-img4.png",
-     name: "Hauz Khas Village",
-     offers: 6,
-     price: 49
-    },{
-     image: "./HomeImages/Hangout/hangout-img5.png",
-     name: "Rajouri Garder Main Market",
-     offers: 6,
-     price: 299
-    },{
-     image: "./HomeImages/Hangout/hangout-img6.png",
-     name: "Maharaja Surajmal Road",
-     offers: 5,
-     price: 750
-    },{
-     image: "./HomeImages/Hangout/hangout-img7.png",
-     name: "Janpath",
-     offers: 4,
-     price: 450
-    },{
-     image: "./HomeImages/Hangout/hangout-img8.png",
-     name: "New Friends Colony Market",
-     offers: 4,
-     price: 206
-    },{
-     image: "./HomeImages/Hangout/hangout-img9.png",
-     name: "IGI T3 Road",
-     offers: 4,
-     price: 2095
-    },{
-     image: "./HomeImages/Hangout/hangout-img10.png",
-     name: "Epicuria",
-     offers: 3,
-     price: 899
-    },
- ]
+
+
+
+
 
 export const Hangout = () => {
+const [arrOfHangouts,setArrOfHangouts]= useState([]);
+
+const getData=()=>{
+    axios.get("https://herebuy-database.vercel.app/arrOfHangouts")
+    .then(res=>setArrOfHangouts(res.data))
+    .catch(err=>console.log(err))
+}
 
     const settings = {
         dots: false,
@@ -128,7 +84,7 @@ export const Hangout = () => {
 
         ]
     };
-
+useEffect(()=>{getData()},[])
     return (
         <>
         <Box className="hangouts">

@@ -1,2 +1,22 @@
+.topBrands1{
+    width: 99%;
+    margin: auto auto 50px auto;
+    margin-top: 30px;
+}
 
+.topBrand2{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.topBrand2>h1{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.topBrandImage{
+    width: 150px;
+}
 

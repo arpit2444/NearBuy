@@ -1,0 +1,26 @@
+.home1{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.allOffers{
+    width: 30%;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.allOffers>button{
+    background-color: #c6d4d9;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: transparent;
+    color: rgb(116, 104, 104);
+    cursor: pointer;
+}
+
+.allOffers>button:hover{
+    color: black;
+}

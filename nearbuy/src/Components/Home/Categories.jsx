@@ -12,11 +12,11 @@ export const Categories = () => {
                     <p>Restaurants Deals</p>
                     </Box>
                    </Link>
-                    
+                   <Link to="/product"> 
                     <Box className="CategoriesCard">
                     <img src="./HomeImages/categories/homeCategory2.png" alt="Error" />
                     <p>Buffet Deals</p>
-                    </Box>
+                    </Box></Link>
                     <Box className="CategoriesCard">
                     <img src="./HomeImages/categories/homeCategory3.png" alt="Error" />
                     <p>Deals on Nightlife</p>

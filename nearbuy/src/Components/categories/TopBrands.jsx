@@ -6,6 +6,7 @@ import { Box, Button } from '@chakra-ui/react';
 // import { Products } from './Products';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import "./TopBrand.css"
 
 const Prev = (props) => {
     // console.log(props);
@@ -99,15 +100,15 @@ export const TopBrands = () => {
     
 
     return (
-        <Box w={"99%"} m={"auto auto 50px auto"} marginTop='30px'>
-            <Box display={'flex'} gap="20px" alignItems={"center"} marginBottom='15px'>
-           <h1 style={{fontSize:'25px',fontWeight:'700'}}>Top Brands</h1>
+        <Box className='topBrands1'>
+            <Box className='topBrand2'>
+           <h1>Top Brands</h1>
            </Box>
             <Slider {...settings} prevArrow={<Prev />} nextArrow={<Next />} >
               {
                 arrOfCrousal3.map((el)=>(
                   <div>
-                     <img width={'150px'} src={el} alt="Error"/>
+                     <img className='topBrandImage' src={el} alt="Error"/>
                  </div>
                 ))
               }

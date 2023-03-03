@@ -5,9 +5,11 @@
     display: flex;
     justify-content: space-around;
 }
-.singleProCOntain div{
+.singleProCOntain div:nth-child(1){
     width: 40%;
 }
+
+
 .singleProCOntain div img{
     width: 550px;
     border-radius: 5px;
@@ -38,6 +40,12 @@
 }
 .singlongloc span{
     font-weight: 800;
+}
+
+/* style for right part of the page starts here */
+
+.singleProCOntain div:nth-child(2){
+    width: 40%;
 }
 
 .singtwo{
@@ -87,4 +95,108 @@ gap: 20px;
    border-radius: 8px;
    font-weight: 800;
    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* style for different screen sizes for the page starts here */
+
+
+@media(max-width:1200px){
+    .singleProCOntain div:nth-child(1){
+        width: 55%;
+    }
+    .singleProCOntain div:nth-child(2){
+        width: 40%;
+    }
+
+
+    .singleProCOntain{
+        justify-content: space-between;
+    }
+    
+.singleProCOntain div img{
+        width: 500px;
+     
+    }
+
+.singTItle{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+    .singtype{
+        font-size: 50px;
+   }
+   .singprice2{
+    font-size: 35px;
+ 
+}
+.singbtn1{
+    font-size: 23px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+}
+.singfinalbtn{
+    font-size: 25px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+}
+
+}
+
+@media(max-width:750px){
+    .singleProCOntain{
+        flex-direction: column;
+        margin: auto;
+        justify-content: space-around;
+    }
+    .singleProCOntain div:nth-child(1){
+        margin-top: 30px;
+        width: 100%;
+    }
+    .singleProCOntain div:nth-child(2){
+        width: 100%;
+    }
+    .singleProCOntain div img{
+        width: 100%;
+    }
+    .singtype{
+        font-size: 35px;
+   }
+   .singTItle{
+    font-size: 20px;
+}
+.singshortloc{
+    font-size: 18px;
+}
+.singlongloc{
+    font-size: 13px;
+    width: 80%;
+}
+.singcont{
+    font-size: 13px;
+}
+.singprice2{
+    font-size: 25px;
+}
+.singbtn1{
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}
+.singfinalbtn{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    
+}
+.br1{
+    display: none;
+}
+.br2{
+    display: none;
+}
 }

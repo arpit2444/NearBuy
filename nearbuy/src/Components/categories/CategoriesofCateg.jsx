@@ -6,10 +6,11 @@ export const CategoriesOfCateg = () => {
     return (
         <>
         <Box className="categoriesofCateg">
+        <Link to="/product">  
                    <Box className="CategoriesOFcategCard">
                     <img src="./category/categofCateg/categofCateg.png" alt="Error" />
                     <p>Buffet Deals</p>
-                    </Box>
+                    </Box></Link>
                     
                     <Box className="CategoriesOFcategCard">
                     <img src="./category/categofCateg/categofCateg-img2.png" alt="Error" />

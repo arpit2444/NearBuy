@@ -33,6 +33,8 @@ import {
 
 import Confetti from "./OrderSuccessCelebration";
 
+
+
 const CheckoutYourDetails = () => {
   const toast = useToast();
 
@@ -44,6 +46,8 @@ const [userDetails,setUserDetails]=useState(false)
   const [cvv, setCVV] = useState(0);
   const [expiry, setExpiry] = useState(0);
 
+
+// function to submit the address details with if else conditions
   function DetailsSubmitButton() {
     const id = "test-toast";
     if (name && address && city) {
@@ -95,6 +99,8 @@ const [userDetails,setUserDetails]=useState(false)
     }
   }
 
+// function to place order after adding card details with if else condition
+
   function PaymentSubmitButton() {
     const id = "test-toast";
     if (cardNumber.length==16 && cvv.length==3 && expiry.length==4 && userDetails==true) {
@@ -144,6 +150,8 @@ const [userDetails,setUserDetails]=useState(false)
     }
   }
 
+  // function to handle cash on delivery 
+
   function CashOnDeliveryPaymentSubmitButton() {
     const id = "test-toast";
 if(userDetails==true){
@@ -192,7 +200,7 @@ if(userDetails==true){
       </Button>)
     }
   }
-
+// main function return statement
   return (
     <>
       <Stack m={"auto"} w={"full"} p={5} spacing={3} align="flex-start">

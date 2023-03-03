@@ -14,6 +14,8 @@ const [btnClass,setBtnClass] = useState("searchButtonA")
 const [btnClass2,setBtnClass2] = useState("searchBtnButton")
 
 
+// api call to get the all products data
+
   const getBarbe=()=>{
     axios.get(`https://herebuy-database-jj32uwrxx-kashif-rezwi.vercel.app/Barbeque?_sort=price&_order=${orders}`, {
       params: {
@@ -21,6 +23,8 @@ const [btnClass2,setBtnClass2] = useState("searchBtnButton")
       }
     }).then((res)=>setData(res.data))
   };
+
+  // sorting functionality starts here
 
   const highToLow=()=>{
  setOrders('desc');
@@ -32,6 +36,7 @@ setBtnClass2("searchButtonA")
     setBtnClass2("searchBtnButton")
     setBtnClass('searchButtonA')
   };
+  // sorting functionality ends here
 
 
   useEffect(()=>{
@@ -56,6 +61,7 @@ setBtnClass2("searchButtonA")
 
       <h2>Best Buffet Restaurants Offer In New Delhi</h2>
 
+{/* search buttons */}
       <div className='searchBtn'>
       <button onClick={highToLow} className={btnClass} >Price (High to Low)</button>
       <button className={btnClass2}   onClick={LowTOHigh}>Price (Low to High)</button>
@@ -65,6 +71,8 @@ setBtnClass2("searchButtonA")
 
         <div className='SearchProductBody'>
           
+{/* products maping starts here */}
+
           {data.length>0 && data.map((el)=>{
             return <Link to={`/product/${el.id}`}> <div key={el.id}>
               <img src={el.imageUrl} alt="" />

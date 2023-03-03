@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useSearchParams } from "react-router-dom";
-import "./Sidebar.css"
+import "./Sidebar.css";
+
+
+// Main Function
+
 export default function Sidebar() {
 const [searchParams, setSearchParams] = useSearchParams();
 const initialState = searchParams.getAll("address")
 const [address,setAddress] = useState(initialState ||[])
 
-
+// below function is handling all the changes in checkbox input
 
 const sideHandleChange=(e)=>{
    const newAddress= [...address]

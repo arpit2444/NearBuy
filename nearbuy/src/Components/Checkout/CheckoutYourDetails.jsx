@@ -33,17 +33,21 @@ import {
 
 import Confetti from "./OrderSuccessCelebration";
 
+
+
 const CheckoutYourDetails = () => {
   const toast = useToast();
 
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
-
+const [userDetails,setUserDetails]=useState(false)
   const [cardNumber, setCardNumber] = useState(0);
   const [cvv, setCVV] = useState(0);
   const [expiry, setExpiry] = useState(0);
 
+
+// function to submit the address details with if else conditions
   function DetailsSubmitButton() {
     const id = "test-toast";
     if (name && address && city) {
@@ -52,13 +56,15 @@ const CheckoutYourDetails = () => {
           colorScheme="red"
           mt={4}
           onClick={() => {
+            setUserDetails(true)
+
             if (!toast.isActive(id)) {
               toast({
                 id,
                 title: "Shipping Details Saved",
                 description: "We've saved your shipping details",
                 status: "info",
-                duration: 3000,
+                duration: 2000,
                 isClosable: true,
                 position: "top",
               });
@@ -78,9 +84,9 @@ const CheckoutYourDetails = () => {
               toast({
                 id,
                 title: "Fill details",
-                description: "Fill above shipping details to proceed",
+                description: "Fill all of the above shipping details to proceed",
                 status: "error",
-                duration: 3000,
+                duration: 2000,
                 isClosable: true,
                 position: "top",
               });
@@ -93,9 +99,11 @@ const CheckoutYourDetails = () => {
     }
   }
 
+// function to place order after adding card details with if else condition
+
   function PaymentSubmitButton() {
     const id = "test-toast";
-    if (cardNumber && cvv && expiry) {
+    if (cardNumber.length==16 && cvv.length==3 && expiry.length==4 && userDetails==true) {
       return (
         <Button
           colorScheme="red"
@@ -108,7 +116,7 @@ const CheckoutYourDetails = () => {
                 description:
                   "Your order will be delivered within 2-3 working days.",
                 status: "success",
-                duration: 5000,
+                duration: 2000,
                 isClosable: true,
                 position: "top",
               });
@@ -127,9 +135,9 @@ const CheckoutYourDetails = () => {
             if (!toast.isActive(id)) {
               toast({
                 id,
-                description: "Fill above payment details to proceed",
+                description: "Fill above payment details correctly to proceed",
                 status: "error",
-                duration: 3000,
+                duration: 2000,
                 isClosable: true,
                 position: "top",
               });
@@ -142,9 +150,11 @@ const CheckoutYourDetails = () => {
     }
   }
 
+  // function to handle cash on delivery 
+
   function CashOnDeliveryPaymentSubmitButton() {
     const id = "test-toast";
-
+if(userDetails==true){
     return (
       <Button
         mt={3}
@@ -157,7 +167,7 @@ const CheckoutYourDetails = () => {
               description:
                 "Your order will be delivered within 2-3 working days.",
               status: "success",
-              duration: 5000,
+              duration: 2000,
               isClosable: true,
               position: "top",
             });
@@ -166,9 +176,31 @@ const CheckoutYourDetails = () => {
       >
         Place Order
       </Button>
-    );
+    );}
+    else{
+      return (
+      <Button
+        mt={3}
+        colorScheme="red"
+        onClick={() => {
+          if (!toast.isActive(id)) {
+            toast({
+              id,
+              title: "Fill details",
+                description: "Fill above shipping details to proceed",
+              status: "error",
+              duration: 2000,
+              isClosable: true,
+              position: "top",
+            });
+          }
+        }}
+      >
+        Place Order
+      </Button>)
+    }
   }
-
+// main function return statement
   return (
     <>
       <Stack m={"auto"} w={"full"} p={5} spacing={3} align="flex-start">
@@ -269,11 +301,11 @@ const CheckoutYourDetails = () => {
 
                       <Input
                         id="ccn"
-                        type="password"
+                        type={Number}
                         inputmode="numeric"
                         pattern="[0-9]{16}"
                         autocomplete="cc-number"
-                        maxlength="16"
+                        maxlength={16}
                         placeholder="xxxx xxxx xxxx xxxx"
                         onChange={(e) => setCardNumber(e.target.value)}
                       />
@@ -299,7 +331,7 @@ const CheckoutYourDetails = () => {
                             Expiry (MMDD)
                           </Text>
                           <Input
-                            type="password"
+                            type= {Number}
                             inputmode="numeric"
                             pattern="[0-9]{3}"
                             maxLength={4}

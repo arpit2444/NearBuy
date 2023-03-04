@@ -5,9 +5,8 @@ import { DealsWithOffers2 } from "../../Components/categories/DealsWithOffer2"
 import { DealsWithOffers3 } from "../../Components/categories/DealsWithOffer3"
 import { EatOut } from "../../Components/categories/EatOut"
 import { FiveStar } from "../../Components/categories/FiveStar"
-import { HotSpots } from "../../Components/categories/Hotspots"
-import { PromoCodes } from "../../Components/categories/PromoCodes"
 import { TopBrands } from "../../Components/categories/TopBrands"
+import { Hangout } from "../../Components/Home/Hangouts"
 // import { FiveStar, TopBrands } from "../../Components/categories/TopBrands"
 import "./Category.css"
 
@@ -22,9 +21,8 @@ export const Category = () => {
         <FiveStar/>
         <DealsWithOffers3/>
         <ProductCarousel/>
-        <HotSpots/>
+        <Hangout/>
         <EatOut/>
-        <PromoCodes/>
         <div className="allOffers">
         <button>VIEW ALL OFFERS</button>
         </div>

@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Sidebar.css";
+
+// Main Function
+
 export default function Sidebar() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialState = searchParams.getAll("address");
@@ -23,6 +26,9 @@ export default function Sidebar() {
     };
     setSearchParams(param);
   }, [address]);
+
+// below function is handling all the changes in checkbox input
+
 
   return (
     <div className="sideBarMainDiv">

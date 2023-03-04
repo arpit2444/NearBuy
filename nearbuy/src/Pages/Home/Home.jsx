@@ -19,8 +19,9 @@ import { HomeCrousal5 } from "../../Components/Home/HomeCrousal5";
 import { SalonServices } from "../../Components/Home/SalonServices";
 import { HomeCrousal6 } from "../../Components/Home/HomeCrousal6";
 import { Massages } from "../../Components/Home/Massage";
-import { HomePromos } from "../../Components/Home/HomePromo";
-// import { HomePromoCodes } from "../../Components/Home/HomePromo";
+
+import "./Home.css"
+
 // import data from "../db.json"
 
 
@@ -45,7 +46,6 @@ export const Home = () => {
                 <SalonServices/>
                 <HomeCrousal6/>
                 <Massages/>
-                <HomePromos/>
                 <div className="allOffers">
                  <button>VIEW ALL OFFERS</button>
                 </div>
@@ -53,7 +53,7 @@ export const Home = () => {
 
             {/* Below Box is for Footer*/}
 
-            <Box w={"100%"} mt={"50px"}>
+            <Box className="home1">
 
                 <FooterTop/>
 

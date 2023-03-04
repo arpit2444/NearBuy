@@ -43,7 +43,7 @@
 <br />
 <h3>Herebuy Single Product Page Screenshot</h3>
 
-![Herebuy Single Product Page Screenshot](https://i.ibb.co/bHNZL2t/Herebuy-Single-Product-Page.png)
+![Screenshot (12)](https://user-images.githubusercontent.com/112858206/222638211-df2d1917-3fe5-41d5-a234-ecb787df79ae.png)
 
 <br />
 <h3>Herebuy Checkout Page Screenshot</h3>

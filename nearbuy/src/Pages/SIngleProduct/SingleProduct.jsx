@@ -26,25 +26,23 @@ export default function SingleProduct() {
   return (
     <div className="singleProCOntain">
     
-              
+              {/* left part of the singleProduct page starts here */}
          <div>
-           
-
-          <img src={ddata.imageUrl} alt="product image" />
+            <img src={ddata.imageUrl} alt="product image" />
           <span className="singTItle">   {ddata.title} </span> <br />
           <span className="singshortloc">{ddata.location}</span><br />
-  <br />
           <span className="singlongloc"><span>
           Address: </span>{ddata.longAddress}</span><br />
           <span className="singcont"><span> Contact: </span>{ddata.phoneNO}</span>
           </div>
 
+          {/* right part of the singleProduct page starts here */}
         <div className="singtwo">
               <span className="singtype">
                 {ddata.type}</span><br />
 
             
-                <span className="singprice"> Rs. {ddata.price} / per head</span><br /><br />
+                <span className="singprice"> Rs. {ddata.price} / per head</span><br /><br className="br1" />
                 <span className="singprice2">  Price: {ddata.price * count}</span> 
 
          <div className="singbtn1div">
@@ -57,7 +55,7 @@ export default function SingleProduct() {
                 </button></div>
          
 
-           <br /><br />
+           <br /><br className="br2" />
               
               
             

@@ -27,6 +27,7 @@ export default function Sidebar() {
     setSearchParams(param);
   }, [address]);
 
+
 // below function is handling all the changes in checkbox input
 
 

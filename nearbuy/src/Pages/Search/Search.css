@@ -44,10 +44,11 @@
     }
     
     .SearchSidebar{
-    width: 20%;
+    width: 23%;
     background-color: white;
     height: 500px;
     padding-left: 20px;
+    padding-top: 20px;
     padding-right: 20px;
     border-radius: 2px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -75,7 +76,7 @@
     }
     
     .SearchProductBody div img{
-        width: 260px;
+        width: 100%;
     }
     .SearchProductBody div h3 span{
         font-size: 13px;
@@ -99,92 +100,74 @@
         font-size: 13px;
         font-weight: 600;
     }
-    
-    /* @media(max-width:1128px) {
-        .SearchProductBody{
-            width: 70%;
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 25px;
-            
-            }
-            .SearchProductBody div img{
-                width: 230px;
-            }
-            .SearchSidebar{
-                width: 20%;
-                background-color: white;
-                height: 500px;
-                padding-left: 15px;
-                padding-right: 15px;
-                border-radius: 2px;
-                line-height:8px;
-                }
-    } */
-    
-    @media(max-width:1000px){
+
+    @media(max-width:1050px){
         .SearchSidebar{
-        
-            height: 550px;
-           
-    
-            }
+           width: 30%;
+           }
+           .SearchRight{
+            width: 60%;
+        }
             .SearchProductBody{
-                width: 70%;
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
-                gap: 25px;
                 
-                }
-            .SearchProductBody div img{
-                width: 200px;
-            }
-            .SearchSidebar{
-                width: 20%;
-                height: 500px;
-                padding-left: 10px;
-                padding-right: 10px;
-                border-radius: 2px;
-                line-height: 14px;
-                }
-    
+                }    
                 .SearchProductBody div h3{
                     font-size: 16px;
                     font-weight: 700;
                 }
-                .SearchProductBody div{
-                    height: 250px;
-                }
     }
-    @media(max-width:720px){
+   
+    @media(max-width:945px){
+        .SearchRight{
+            width: 65%;
+        }
+        .SearchProductBody div{
+            height: 260px;
+        }
+        .searchBtn{
+            margin-top: 15px;
+            margin-left: -150px;
+        }
+   
+        .SearchMainDiv{
+            width: 96%;
+        }
+    }
+
+    @media(max-width:740px){
+        .SearchSidebar{
+            height: 700px;
+        }
+        .searchBtn{
+            margin-left: -200px;
+        }
+    }
+
+    @media(max-width:570px){
         .SearchProductBody{
-            width: 70%;
-            display: grid;
             grid-template-columns: repeat(1,1fr);
-            gap: 25px;
             
+            } 
+            .SearchRight{
+                
+              width:50%
             }
-    
+            .SearchMainDiv{
+               padding-top: 10px;
+            } 
+            .bcdSearch{
+                margin-top: 45px;
+                 margin-left: -150px; 
+                 margin-bottom: 20px;
+          display: flex;
+            }
+            .searchBtn button{
+                padding: 5px;
+            }
             .SearchSidebar{
-                width: 20%;
-                background-color: white;
-                height: 600px;
-                padding-left: 6px;
-                padding-right: 6px;
-                border-radius: 2px;
-                line-height: 11px;
-                }
-                .SearchProductBody div{
-                    height: 210px;
-                }
-             
-                    .SearchProductBody div img{
-                        width: 170px;
-                    }
-    
-                    .SearchProductBody div h3{
-                        font-size: 15px;
-                        font-weight: 700;
-                    }
+                width: 45%;
+                margin-top: 120px;
+            }
     }
-    

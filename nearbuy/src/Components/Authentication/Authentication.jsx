@@ -19,6 +19,7 @@ import { RxCross1 } from "react-icons/rx";
 import { userAuthContext } from "../Context/UserAuthContext";
 import "./Authentication.css";
 
+// this function returns a modal for login and authentication.
 export const Authentication = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -33,11 +34,11 @@ export const Authentication = () => {
 
   const toast = useToast();
 
+  // this function is for validate user with phone number and google capcha and it will give a toast pop up meassage according to success or error.
   const handleSendOtp = async () => {
     if (number === "" || number === undefined) {
       toast({
         position: "top",
-        title: "Account created.",
         description: "Please enter a valid Phone Number.",
         status: "error",
         duration: 9000,
@@ -72,14 +73,14 @@ export const Authentication = () => {
     }
   };
 
+  // this function is for otp authentication and it will give a toast pop up meassage according to success or error.
   const handleVerifyOtp = async () => {
     if (otp === "" || otp === null) {
       toast({
         position: "top",
-        title: "Account created.",
-        description: "Invalid OTP!",
+        description: "Please enter your OTP!",
         status: "error",
-        duration: 9000,
+        duration: 5000,
         isClosable: true,
       });
       return;
@@ -99,6 +100,13 @@ export const Authentication = () => {
           });
         }
       } catch (err) {
+        toast({
+          position: "top",
+          description: err.message,
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
         console.log(err.message);
       }
     }

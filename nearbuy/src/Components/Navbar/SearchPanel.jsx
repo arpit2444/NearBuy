@@ -23,6 +23,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useThrottle } from "./Hooks/useThrottle";
 import { getData } from "./utils/accessLacalStorage";
 
+// this function returns search panel in the navbar section.
 export const SearchPanel = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -31,6 +32,7 @@ export const SearchPanel = () => {
   const [recommended, setRecommended] = useState([]);
   const city = getData("city");
 
+  //this function is used for fetching  recommended data from our api.
   const getRecommended = useCallback((query) => {
     const url = `https://herebuy-database.vercel.app/newDelhi`;
     axios
@@ -43,12 +45,12 @@ export const SearchPanel = () => {
       });
   }, []);
 
-  // Search functionalities
-
+  // geting input data for Search functionalities
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
+  // this is a function for searching different differemt location in new delhi from our api
   const handleQuery = useCallback((query) => {
     if (query) {
       const url = `https://herebuy-database.vercel.app/newDelhi?q=${query}`;
@@ -65,13 +67,16 @@ export const SearchPanel = () => {
     }
   }, []);
 
+  // here i have used useThrottle hook for limiting the api request.
   let throttleValue = useThrottle(search, 2000);
 
+  // here in the useEffect all the functions above like getRecommended(), handleQuery(throttleValue) are called.
   useEffect(() => {
     getRecommended();
     handleQuery(throttleValue);
   }, [throttleValue]);
 
+  // in this function i have used  to save data in the ui.
   const handleService = () => {
     setSearch("");
   };

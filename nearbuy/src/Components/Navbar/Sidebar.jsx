@@ -23,6 +23,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { Authentication } from "../Authentication/Authentication";
 import { useNavigate } from "react-router-dom";
 
+// this function returns navber as a slider with a hamburger icon in the navbar section for mobile and tablet screens.
 export const Sidebar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
@@ -30,6 +31,7 @@ export const Sidebar = () => {
   const navigate = useNavigate();
   const toast = useToast();
 
+  // this function is for signout and it will give a toast pop up saying Sign Out Successfully.
   const handleLogOut = () => {
     SignOut()
       .then((res) => {

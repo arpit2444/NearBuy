@@ -16,12 +16,14 @@ import { useNavigate } from "react-router-dom";
 import { userAuthContext } from "../Context/UserAuthContext";
 import { FaUserCircle } from "react-icons/fa";
 
+// this function returns a profile section (dropdown component) if user is loged in succesfully.
 export const AuthDropDown = () => {
   const { user, SignOut } = useContext(userAuthContext);
   const navigate = useNavigate();
 
   const toast = useToast();
 
+  // this function is for signout and it will give a toast pop up saying Sign Out Successfully.
   const handleLogOut = () => {
     SignOut()
       .then((res) => {

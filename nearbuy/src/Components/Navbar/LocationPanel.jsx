@@ -25,6 +25,7 @@ import axios from "axios";
 import { useThrottle } from "./Hooks/useThrottle";
 import { getData, saveData } from "./utils/accessLacalStorage";
 
+// this is some on UI data for maping into the recommended section below.
 const Recommended = [
   { name: "New Delhi", path: "" },
   { name: "Gurgaon", path: "" },
@@ -40,6 +41,7 @@ const Recommended = [
   { name: "Goa", path: "" },
 ];
 
+// this function returns location panel in the navbar section.
 export const LocationPanel = ({ boolean = true }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -52,6 +54,7 @@ export const LocationPanel = ({ boolean = true }) => {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
 
+  // this is a function for geting latitude and longitude for locating current location of the user.
   const getCoordinates = async () => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLatitude(position.coords.latitude);
@@ -59,6 +62,7 @@ export const LocationPanel = ({ boolean = true }) => {
     });
   };
 
+  // this is a function for locating current location of the user through openweather api.
   const getLocation = () => {
     const api_endpoint = `https://api.openweathermap.org/data/2.5/weather?`;
     const api_key = `ffd59a0590e28f3ddb262bfa988d132e`;
@@ -75,12 +79,12 @@ export const LocationPanel = ({ boolean = true }) => {
       .catch((err) => console.log(err.message));
   };
 
-  // Search functionalities
-
+  // geting input data for Search functionalities
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
+  // this is a function for searching cities from our api
   const handleQuery = useCallback((query) => {
     if (query) {
       const url = `https://herebuy-database.vercel.app/cities?q=${query}`;
@@ -97,14 +101,17 @@ export const LocationPanel = ({ boolean = true }) => {
     }
   }, []);
 
+  // here i have used useThrottle hook for limiting the api request.
   let throttleValue = useThrottle(search, 2000);
 
+  // here in the useEffect all the functions above like handleQuery(throttleValue), getCoordinates(), getLocation() are called.
   useEffect(() => {
     handleQuery(throttleValue);
     getCoordinates();
     getLocation();
   }, [throttleValue, latitude, longitude]);
 
+  // in this function i have used different different methods to save data in the ui as well as localstorage.
   const handleCity = (value) => {
     setCity(value);
     setSearch("");

@@ -2,6 +2,7 @@ import "./CategoriesofCateg.css"
 import { Box } from "@chakra-ui/react"
 import { Link } from "react-router-dom";
 
+
 export const CategoriesOfCateg = () => {
     return (
         <>

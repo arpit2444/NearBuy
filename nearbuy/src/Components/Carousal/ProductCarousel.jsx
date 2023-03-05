@@ -6,6 +6,7 @@ import { Box, Button } from '@chakra-ui/react';
 import { Products } from './Products';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import "./product.css"
 
 const Prev = (props) => {
     // console.log(props);
@@ -84,11 +85,11 @@ export const ProductCarousel = () => {
     
 
     return (
-        <Box w={"99%"} m={"auto auto 50px auto"}>
-            <Box display={'flex'} gap="20px" alignItems={"center"}>
-           <h1 style={{fontSize:'25px',fontWeight:'700'}}>New On Nearbuy!</h1>
-           <img style={{width:'30px',height:'30px'}} src="./HomeImages/ProductCrousal/starEmoji.png" alt="Error" />
-           <img style={{width:'30px',height:'30px'}} src="./HomeImages/ProductCrousal/celebImage.png" alt="Error" />
+        <Box className='productSlider' >
+            <Box className='productSlider2'>
+           <h1>New On Nearbuy!</h1>
+           <img  src="./HomeImages/ProductCrousal/starEmoji.png" alt="Error" />
+           <img  src="./HomeImages/ProductCrousal/celebImage.png" alt="Error" />
            </Box>
             <Slider {...settings} prevArrow={<Prev />} nextArrow={<Next />} >
 

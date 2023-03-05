@@ -88,7 +88,7 @@ export const SearchPanel = () => {
         color={"#ef6864"}
         justify={"center"}
         align={"center"}
-        className={"searchBox"}
+        // className={"searchBox"}
       >
         <HStack justify={"space-between"} align={"center"} className="inputBox">
           <HiOutlineSearch />

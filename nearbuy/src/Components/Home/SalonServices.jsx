@@ -1,6 +1,8 @@
 import { Box } from "@chakra-ui/react"
 import "./SalonServices.css"
 
+// Salon service section on home page
+
 
 export const SalonServices = () => {
     return (

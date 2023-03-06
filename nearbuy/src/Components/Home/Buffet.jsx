@@ -2,6 +2,8 @@ import { Box } from "@chakra-ui/react"
 import "./Buffet.css"
 import {Link} from "react-router-dom"
 
+// Buffet section on home page
+
 export const Buffet = () => {
     return (
         <Box className="buffet">

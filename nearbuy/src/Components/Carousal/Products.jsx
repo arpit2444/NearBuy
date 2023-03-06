@@ -2,16 +2,13 @@ import { Box, HStack, Image, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
 import { Ratings } from './Ratings'
 import  "./product.css"
-// import { useNavigate } from 'react-router-dom'
+
+
+// single product card
 
 export const Products = ({key, props }) => {
     const { title, location, type, mrp, price, rating, imageUrl } = props
 
-    // const navigate = useNavigate()
-
-    // const singleProductData = (prod) => {
-    //     navigate({ pathname: '/SingleProduct' }, { state: prod })
-    // } 
 
 
     let shortTitle = title.split("")?.filter((el, i) => i <= 27);

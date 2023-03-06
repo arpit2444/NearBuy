@@ -3,6 +3,8 @@ import { Box } from "@chakra-ui/react"
 import { Link } from "react-router-dom";
 
 
+//  categories section on catregory page
+
 export const CategoriesOfCateg = () => {
     return (
         <>

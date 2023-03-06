@@ -1,3 +1,6 @@
+
+// Eat out section-2 in catregory page
+
 export const EatOutP2 = ({less,onSet}) => {
     return <div className="eatOut2">
         <p>Are you in the mood for an exquisite dinner with your significant other, 

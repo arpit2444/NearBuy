@@ -12,6 +12,8 @@ import {
   } from '@chakra-ui/react'
 import React from 'react'
 
+  // Know more section in catregory page
+
 
 export const BackdropExample = () => {
     const OverlayOne = () => (

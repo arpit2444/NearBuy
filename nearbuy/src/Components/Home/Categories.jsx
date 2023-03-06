@@ -2,6 +2,8 @@ import "./Categories.css"
 import { Box } from "@chakra-ui/react"
 import { Link } from "react-router-dom";
 
+// Categories section on home page
+
 export const Categories = () => {
     return (
         <>

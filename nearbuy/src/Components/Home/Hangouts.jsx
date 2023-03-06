@@ -3,13 +3,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { Box, Button } from '@chakra-ui/react';
-// import { Products } from './Products';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./Hangout.css"
 
+// Hangout section on home page
+
 const Prev = (props) => {
-    // console.log(props);
     const { className, onClick } = props;
     return (
         <>

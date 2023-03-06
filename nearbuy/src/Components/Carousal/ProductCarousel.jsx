@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./product.css"
 
+// Product Crousals
+
 const Prev = (props) => {
     // console.log(props);
     const { className, onClick } = props;

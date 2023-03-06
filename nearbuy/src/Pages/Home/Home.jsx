@@ -19,10 +19,9 @@ import { HomeCrousal5 } from "../../Components/Home/HomeCrousal5";
 import { SalonServices } from "../../Components/Home/SalonServices";
 import { HomeCrousal6 } from "../../Components/Home/HomeCrousal6";
 import { Massages } from "../../Components/Home/Massage";
-
 import "./Home.css"
 
-// import data from "../db.json"
+// Home page
 
 
 export const Home = () => {

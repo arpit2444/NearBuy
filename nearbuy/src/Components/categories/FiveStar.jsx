@@ -1,5 +1,6 @@
-  
-import "./FiveStar.css"
+  import "./FiveStar.css"
+
+  // Five star section in catregory page
 
 export const FiveStar = () => {
   return (

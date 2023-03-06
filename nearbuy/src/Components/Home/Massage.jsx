@@ -1,6 +1,8 @@
 import { Box } from "@chakra-ui/react"
 import "./SalonServices.css"
 
+// Massage section on home page
+
 
 export const Massages = () => {
     return (

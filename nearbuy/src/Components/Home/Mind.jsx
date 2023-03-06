@@ -7,6 +7,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 
+// Mind section on home page
+
 
 let arrOfQuickBites = [
     "./HomeImages/Mind/mind-img1.png",

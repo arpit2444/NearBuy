@@ -3,6 +3,10 @@ import React from 'react';
 import "./rating.css"
 import { TiStarFullOutline, TiStarHalfOutline, TiStarOutline } from 'react-icons/ti';
 
+
+// rating part
+
+
 export const Ratings = ({ rating }) => {
 
     let pointRating = rating === 5 || 4 || 3 || 2 || 1 || 0 ? rating + ".0".toString() : rating.toString();

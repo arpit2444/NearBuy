@@ -1,17 +1,13 @@
-
-
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import "./DealsWithOffer.css";
+ 
+// deals with offers section-1 in catregory page
 
-// import required modules
+
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 export const DealsWithOffers1 = () => {

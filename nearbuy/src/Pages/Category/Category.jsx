@@ -10,6 +10,8 @@ import { Hangout } from "../../Components/Home/Hangouts"
 // import { FiveStar, TopBrands } from "../../Components/categories/TopBrands"
 import "./Category.css"
 
+// Category page
+
 
 export const Category = () => {
     return (

@@ -1,4 +1,5 @@
-Navbar search box .searchBox {
+/* Navbar search box  */
+.searchBox {
   min-width: 350px;
   position: relative;
   overflow: hidden;
